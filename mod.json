@@ -1,7 +1,7 @@
 {
-  "name": "0ad-TTS-speaking-population",
+  "name": "ttsSpeakingPopulation",
   "version": "0.9",
-  "label": "0ad-TTS-speaking-population",
+  "label": "0ad-TTS speaking population. TTS example working in linux",
   "description": "TTS-speaking-population for linux",
   "ignoreInCompatibilityChecks": true,
   "dependencies": ["0ad=0.0.26"],
