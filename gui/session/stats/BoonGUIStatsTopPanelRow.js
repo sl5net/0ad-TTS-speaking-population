@@ -532,7 +532,7 @@ class BoonGUIStatsTopPanelRow
 				ttsPL(msg);
 				this.hotKeyExplained_atPopCount = this.statPopCount;
 				this.hotKeyExplained++; // just for statisic or so
-				warn(this.hotKeyExplained);
+				// warn('535:' + this.hotKeyExplained);
 			}
 
 			if( this.itsMe !== true && this.voiceInfosExtra.popMax == 0 && Engine.ConfigDB_GetValue("user", "boongui.itsWorldCup") == "true"){

@@ -1,3 +1,6 @@
+var AudioTTSspeak = new Map();
+
+
 class BoonGUIStatsTopPanel {
 
 	constructor() {
@@ -70,10 +73,10 @@ class BoonGUIStatsTopPanel {
 							let msg =  '';
 							if(state.resourceCounts[resType] <= 4 * state.popCount)
 								msg = "We are terrible hungry.";
-							else if(state.resourceCounts[resType] <= 7 * state.popCount)
-								msg = "We are hungry.";
-							else if(state.resourceCounts[resType] <= 10 * state.popCount)
-								msg = "Our food supplies are low.";
+							// else if(state.resourceCounts[resType] <= 7 * state.popCount)
+							// 	msg = "We are hungry.";
+							// else if(state.resourceCounts[resType] <= 10 * state.popCount)
+							// 	msg = "Our food supplies are low.";
 							if(msg){
 								ttsPL(msg);
 								this.TTY.POPlast[resType] = state.resourceCounts[resType];
@@ -84,10 +87,10 @@ class BoonGUIStatsTopPanel {
 						let msg =  '';
 						if(state.resourceCounts[resType] <= 4 * state.popCount)
 							msg =  resType + " is terrible low.";
-						else if(state.resourceCounts[resType] < 7 * state.popCount)
-							msg = "A little more " + resType + " would be good.";
-						else if(state.resourceCounts[resType] <= 10 * state.popCount)
-							msg = "Our " + resType + " supplies are low.";
+						// else if(state.resourceCounts[resType] < 7 * state.popCount)
+						// 	msg = "A little more " + resType + " would be good.";
+						// else if(state.resourceCounts[resType] <= 10 * state.popCount)
+						// 	msg = "Our " + resType + " supplies are low.";
 						if(msg){
 							ttsPL(msg);
 							this.TTY.POPlast[resType] = state.resourceCounts[resType];
@@ -99,8 +102,8 @@ class BoonGUIStatsTopPanel {
 						let msg =  '';
 						if(state.resourceCounts[resType] <= 4 * state.popCount)
 							msg = resType + " is terrible low.";
-						else if(state.resourceCounts[resType] < 10 * state.popCount)
-							msg = "A little more " + resType + " would be good.";
+						// else if(state.resourceCounts[resType] < 10 * state.popCount)
+						// 	msg = "A little more " + resType + " would be good.";
 						if(msg){
 							ttsPL(msg);
 							this.TTY.POPlast[resType] = state.resourceCounts[resType];
@@ -116,9 +119,31 @@ class BoonGUIStatsTopPanel {
 	}
 }
 function ttsPL(msg){
-	Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.speak", msg, "config/user.cfg");
 	const date = new Date();
-	const isoDateTime = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString();
-	Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.timestamp","" + isoDateTime, "config/user.cfg");
+
+	const msgDateInMap = AudioTTSspeak.get(msg) // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map?retiredLocale=de
+	// undefined
+	// if(msgDateInMap === undefined)
+	let doSpeak = false;
+	if (!msgDateInMap) {
+		// warn("AudioTTSspeak.set");
+		doSpeak = true;
+	}else{
+		const diffSeconds = Math.abs(date - msgDateInMap) / 1000;
+		// warn("diffSeconds=" + diffSeconds);
+
+		if(diffSeconds > 15){ // dont remind if last reminder was before 10 seconds
+			doSpeak = true;
+		}
+
+	}
+
+	if(doSpeak){
+		Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.speak", msg, "config/user.cfg");
+		const isoDateTime = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString();
+		Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.timestamp","" + isoDateTime, "config/user.cfg");
+		AudioTTSspeak.set(msg, date);
+	}
+
 }
 
