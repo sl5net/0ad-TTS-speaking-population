@@ -139,7 +139,12 @@
 				"config": "boongui.toppanel.coloredPlayerStatsBackground",
 				"min": 5,
 				"max": 50
-			},
+			}
+		]
+	},
+	{
+		"label": "TTS-Speaking",
+		"options": [
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]yawning idle[/color] from the start time of a game.",
@@ -261,4 +266,5 @@
 			}
 		]
 	}
+
 ]
