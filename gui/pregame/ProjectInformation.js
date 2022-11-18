@@ -16,7 +16,7 @@ var g_ProjectInformation = {
 	},
 	"productDescription": {
 		"caption": setStringTags(translate("Alpha XXVI: Zhuangzi"), { "font": "sans-bold-18" }) + "\n" +
-			setStringTags(translate("boonGUI" + " " + Engine.GetEngineInfo().mods.find(obj => obj.name == "boonGUI").version), { "font": "sans-16" })
+			setStringTags(translate("boonGUI" + " " + Engine.GetEngineInfo().mods.find(obj => obj.name == "ttsSpeakingPopulation").version), { "font": "sans-16" })
 	}
 };
 var g_CommunityButtons = [
