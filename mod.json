@@ -1,0 +1,9 @@
+{
+  "name": "0ad-TTS-speaking-population",
+  "version": "0.9",
+  "label": "0ad-TTS-speaking-population",
+  "description": "TTS-speaking-population for linux",
+  "ignoreInCompatibilityChecks": true,
+  "dependencies": ["0ad=0.0.26"],
+  "url": "https://github.com/sl5net/0ad-TTS-speaking-population"
+}

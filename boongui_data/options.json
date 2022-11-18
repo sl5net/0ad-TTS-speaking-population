@@ -1,0 +1,264 @@
+[
+	{
+		"label": "boonGUI",
+		"options": [
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]Scroll[/color] speed",
+				"tooltip": "Set the speed at which you move across the map.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"config": "view.scroll.speed",
+				"list": [
+					{ "value": "50.0", "label": "50 - Slower" },
+					{ "value": "80.0", "label": "80 - Slow" },
+					{ "value": "120.0", "label": "[color=\"220 185 70\"]120 - Default[/color]" },
+					{ "value": "180.0", "label": "180 - Fast" },
+					{ "value": "250.0", "label": "250 - Faster" },
+					{ "value": "350.0", "label": "350 - Ultra Fast" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]Rotation[/color] speed: Horizontal",
+				"tooltip": "Set the speed at which you rotate left/right.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"config": "view.rotate.x.speed",
+				"list": [
+					{ "value": "0.5", "label": "0.5 - Slower" },
+					{ "value": "0.8", "label": "0.8 - Slow" },
+					{ "value": "1.2", "label": "[color=\"220 185 70\"]1.2 - Default[/color]" },
+					{ "value": "1.8", "label": "1.8 - Fast" },
+					{ "value": "2.5", "label": "2.5 - Faster" },
+					{ "value": "3.5", "label": "3.5 - Ultra Fast" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]Rotation[/color] speed: Vertical",
+				"tooltip": "Set the speed at which you rotate up/down.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"config": "view.rotate.y.speed",
+				"list": [
+					{ "value": "1.1", "label": "1.1 - Slower" },
+					{ "value": "1.8", "label": "1.8 - Slow" },
+					{ "value": "2.0", "label": "[color=\"220 185 70\"]2 - Default[/color]" },
+					{ "value": "4.1", "label": "3.9 - Fast" },
+					{ "value": "5.8", "label": "5.8 - Faster" },
+					{ "value": "8.2", "label": "8.2 - Ultra Fast" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]Zoom[/color] speed: Hotkey",
+				"tooltip": "Set the speed at which you zoom in/out with your hotkeys.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"config": "view.zoom.speed",
+				"list": [
+					{ "value": "150.0", "label": "150 - Slower" },
+					{ "value": "200.0", "label": "200 - Slow" },
+					{ "value": "256.0", "label": "[color=\"220 185 70\"]256 - Default[/color]" },
+					{ "value": "350.0", "label": "350 - Fast" },
+					{ "value": "500.0", "label": "500 - Faster" },
+					{ "value": "650.0", "label": "650 - Ultra Fast" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]Zoom[/color] speed: Mouse wheel",
+				"tooltip": "Set the speed at which you zoom in/out with your mouse wheel.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"config": "view.zoom.speed.wheel",
+				"list": [
+					{ "value": "15.0", "label": "15 - Slower" },
+					{ "value": "25.0", "label": "25 - Slow" },
+					{ "value": "32.0", "label": "[color=\"220 185 70\"]32 - Default[/color]" },
+					{ "value": "50.0", "label": "50 - Fast" },
+					{ "value": "75.0", "label": "75 - Faster" },
+					{ "value": "100.0", "label": "100 - Ultra Fast" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]Zoom[/color] out distance",
+				"tooltip": "Set how far you can zoom out.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"config": "view.zoom.max",
+				"list": [
+					{ "value": "200.0", "label": "[color=\"220 185 70\"]200 - Default[/color]" },
+					{ "value": "300.0", "label": "300 - Far" },
+					{ "value": "400.0", "label": "400 - Further" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]Zoom[/color] in distance",
+				"tooltip": "Set how close you can zoom in.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"config": "view.zoom.min",
+				"list": [
+					{ "value": "10.0", "label": "10 - Closer" },
+					{ "value": "30.0", "label": "30 - Close" },
+					{ "value": "50.0", "label": "[color=\"220 185 70\"]50 - Default[/color]" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]Windowed mode[/color] screen width",
+				"tooltip": "Screen width in windowed mode.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color][color=\"220 185 70\"]",
+				"config": "xres",
+				"list": [
+					{ "value": "1024", "label": "[color=\"220 185 70\"]1024 - Default[/color]" },
+					{ "value": "1280", "label": "1280" },
+					{ "value": "1440", "label": "1440" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]Windowed mode[/color] screen height",
+				"tooltip": "Screen height in windowed mode.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color][color=\"220 185 70\"]",
+				"config": "yres",
+				"list": [
+					{ "value": "768", "label": "[color=\"220 185 70\"]768 - Default[/color]" },
+					{ "value": "800", "label": "800" },
+					{ "value": "900", "label": "900" }
+				]
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]Top Panel[/color] Display time duration of replays",
+				"tooltip": "Decide if you want to see the time duration of the replay above the top panel. ",
+				"config": "boongui.showduration"
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]Top Panel[/color] Gatheres or Income/10s",
+				"tooltip": "Specify what to display next to the resource count.\n\n[color=\"220 185 70\"]Gatherers:[/color] Total number of units that are gathering and on their way to gather this resource.\n[color=\"220 185 70\"]Income/10s:[/color] Total number of resources income over 10 seconds.",
+				"config": "boongui.toppanel.resourceGatherersRates",
+				"list": [
+					{ "value": "Gatherers", "label": "[color=\"220 185 70\"]Gatherers - Default[/color]" },
+					{ "value": "Rates", "label": "Income/10s"}
+				]
+			},
+			{
+				"type": "slider",
+				"label": "[color=\"220 185 70\"]Top Panel[/color] row color intensity",
+				"tooltip": "Choose the color intensity for the rows.",
+				"config": "boongui.toppanel.coloredPlayerStatsBackground",
+				"min": 5,
+				"max": 50
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]yawning idle[/color] from the start time of a game.",
+				"tooltip": "if used, the idle button can NOT be used anymore to find people who are idling. \n\nThe Button then is for toggle the yawning sound, throughout the total playing time.\n\n the hotkeys to find idles, of course, still working.\n\nchange only has an effect from the next game",
+				"config": "boongui.yawningIdlePopMax",
+				"list": [
+					{ "value": "0.0", "label": "[color=\"220 185 70\"]no yawning for idles - recommended[/color]" },
+					{ "value": "50.0", "label": "< 50 yawning only until 50 population" },
+					{ "value": "100.0", "label": "< 100 yawning only until 100 population" },
+					{ "value": "200.0", "label": "< 200 yawning only until 300 population" },
+					{ "value": "300.0", "label": "< 300 yawning only until 300 population" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]yawning idle[/color] frequency.",
+				"tooltip": "pause in seconds beetween in seconds",
+				"config": "boongui.yawningPauseMiliSeconds",
+				"list": [
+					{ "value": "1", "label": "[color=\"220 185 70\"]about every 1 seconds - recommended[/color]" },
+					{ "value": "2", "label": "about every 2 seconds" },
+					{ "value": "4", "label": "about every 4 seconds" },
+					{ "value": "6", "label": "about every 6 seconds" },
+					{ "value": "8", "label": "about every 8 seconds" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]yawning idle[/color] duration.",
+				"tooltip": "how long your idle shoud yawning",
+				"config": "boongui.yawningDuration",
+				"list": [
+					{ "value": "1", "label": "[color=\"220 185 70\"]1 seconds - recommended[/color]" },
+					{ "value": "2", "label": "2 seconds" },
+					{ "value": "4", "label": "4 seconds" },
+					{ "value": "888888", "label": "always" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]EXPERIMENTAL: yawning idle rememer again[/color] rememer you much later again.",
+				"tooltip": "if your idle stay very long, you have maybe forgot them, they could star yawning again",
+				"config": "boongui.yawningAginMuchLater",
+				"list": [
+					{ "value": "3", "label": "[color=\"220 185 70\"]in 3 seconds - recommended[/color]" },
+					{ "value": "4", "label": "in 4 seconds" },
+					{ "value": "888888", "label": "newer" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]yawning Sound[/color]",
+				"tooltip": "yawning Audio File",
+				"config": "boongui.yawningAudioFile",
+				"list": [
+					{ "value": "yawning-long.ogg", "label": "yawning-long" },
+					{ "value": "yawning.ogg", "label": "yawning" },
+					{ "value": "beep_idle_02.ogg", "label": "beep_idle_02" },
+					{ "value": "we-are-waiting.ogg", "label": "[color=\"220 185 70\"]we-are-waiting.ogg - recommended[/color]" },
+					{ "value": "we-are-waitingTTS.ogg", "label": "[color=\"220 185 70\"]we-are-waitingTTS.ogg[/color]" },
+					{ "value": "we-are-ready-with-it.ogg", "label": "we-are-ready-with-it" },
+					{ "value": "we-did-it-yeah.ogg", "label": "we-did-it-yeah[/color]" },
+					{ "value": "stretches-and-yawns2.ogg", "label": "stretches-and-yawns2" },
+					{ "value": "stretches-and-yawns.ogg", "label": "stretches-and-yawns2" }
+				]
+			},
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]yawning: Hear all Players[/color]",
+				"tooltip": "as an observer hear all players speak at the same time",
+				"config": "boongui.yawningHearAllPlayers",
+				"list": [
+					{ "value": "", "label": "[color=\"220 185 70\"]Hear only myself[/color]" },
+					{ "value": "hearAll", "label": "Hear all Players" }
+				]
+			},
+
+		{
+			"type": "boolean",
+			"label": "[color=\"220 185 70\"]yawning: Hear as observer (not implemented)[/color]",
+			"tooltip": "Hear all also as observer (not recomandet)",
+			"config": "boongui.yawningHearAsObserver"
+		},
+
+
+			{
+				"type": "dropdown",
+				"label": "[color=\"220 185 70\"]yawning count[/color]: and show all interruptions by Idle(EXPERIMENTAL)",
+				"tooltip": "count and show all interruptions by Idle EXPERIMENTAL shows as error message",
+				"config": "boongui.yawningShowInterruptionsByIdle",
+				"list": [
+					{ "value": "", "label": "no text messages with interruptions statistic" },
+					{ "value": "showAllCount", "label": "show all" }
+				]
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]tips[/color] population gives you tips(EXPERIMENTAL)",
+				"tooltip": "population gives you tips (yellow waring messages  ",
+				"config": "boongui.tipsFromPopulation"
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]TTS tips[/color] population Speech tips to you (EXPERIMENTAL)",
+				"tooltip": "population gives you tips (Speech to you)  ",
+				"config": "boongui.TTStipsFromPopulation"
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]tips[/color]itsWorldCup(EXPERIMENTAL)",
+				"tooltip": "itsWorldCup welcome message and greeting voice",
+				"config": "boongui.itsWorldCup"
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]tips[/color]explain easiest hotkey-config for beginners (seeh-hotKeys-config) (EXPERIMENTAL)",
+				"tooltip": "explain hotKeys configuration from seeh",
+				"config": "boongui.hotKeyExplained"
+			}
+		]
+	}
+]
