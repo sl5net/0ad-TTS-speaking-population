@@ -516,9 +516,12 @@ class BoonGUIStatsTopPanelRow
 
 			this.popLimitInt = this.popLimit.caption.match(/.*\](\d+)\[/)[1];
 			if(this.itsMe && this.statPopCount + 5 > this.popLimitInt 
-				&& this.popLimitIntOD != this.popLimitInt
-				&& Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true"){
-				error("nearly housed. build more housese");
+				&& this.popLimitIntOD != this.popLimitInt ){
+				const msg = "nearly housed. build more housese";
+				if(Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true")
+					error(msg);
+				if(Engine.ConfigDB_GetValue("user", "boongui.TTStipsFromPopulation") == "true")
+					ttsPL(msg);
 				this.popLimitIntOD = this.popLimitInt;
 			}
 
