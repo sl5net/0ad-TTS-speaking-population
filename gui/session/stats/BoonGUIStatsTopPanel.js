@@ -120,8 +120,8 @@ class BoonGUIStatsTopPanel {
 }
 function ttsPL(msg){
 	const date = new Date();
-
-	const msgDateInMap = AudioTTSspeak.get(msg) // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map?retiredLocale=de
+	const msgWithoutNumber = msg.replace(/\d+/g,''); // it often good enough to remember only if the type change. 
+	const msgDateInMap = AudioTTSspeak.get(msgWithoutNumber) // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map?retiredLocale=de
 	// undefined
 	// if(msgDateInMap === undefined)
 	let doSpeak = false;
@@ -142,7 +142,7 @@ function ttsPL(msg){
 		Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.speak", msg, "config/user.cfg");
 		const isoDateTime = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString();
 		Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.timestamp","" + isoDateTime, "config/user.cfg");
-		AudioTTSspeak.set(msg, date);
+		AudioTTSspeak.set(msgWithoutNumber, date);
 	}
 
 }
