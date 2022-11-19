@@ -71,7 +71,7 @@ class BoonGUIStatsTopPanel {
 					if( resType == 'food'  
 						&& this.TTY.POPlast[resType] != state.resourceCounts[resType] ){ 			
 							let msg =  '';
-							if(state.resourceCounts[resType] <= 4 * state.popCount)
+							if(state.resourceCounts[resType] <= 1 * state.popCount)
 								msg = "We are terrible hungry.";
 							// else if(state.resourceCounts[resType] <= 7 * state.popCount)
 							// 	msg = "We are hungry.";
@@ -85,7 +85,7 @@ class BoonGUIStatsTopPanel {
 					if( resType == 'wood'  
 					&& this.TTY.POPlast[resType] != state.resourceCounts[resType] ){ 			
 						let msg =  '';
-						if(state.resourceCounts[resType] <= 4 * state.popCount)
+						if(state.resourceCounts[resType] <= 1 * state.popCount)
 							msg =  resType + " is terrible low.";
 						// else if(state.resourceCounts[resType] < 7 * state.popCount)
 						// 	msg = "A little more " + resType + " would be good.";
@@ -100,7 +100,7 @@ class BoonGUIStatsTopPanel {
 					if( resType == 'stone'  
 					&& this.TTY.POPlast[resType] != state.resourceCounts[resType] ){ 			
 						let msg =  '';
-						if(state.resourceCounts[resType] <= 4 * state.popCount)
+						if(state.resourceCounts[resType] <= 2 * state.popCount)
 							msg = resType + " is terrible low.";
 						// else if(state.resourceCounts[resType] < 10 * state.popCount)
 						// 	msg = "A little more " + resType + " would be good.";
