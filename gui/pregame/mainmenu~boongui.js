@@ -76,4 +76,53 @@ autociv_patchApplyN("init", function(target, that, args)
 	}
 
 	return target.apply(that, args);
-});
+}
+
+);
+
+
+warn('check_tts_Settings()');
+function check_tts_Settings(){
+	    // Check settings
+	if ( Engine.ConfigDB_GetValue("user", "profile.autociv.intuitive"))
+    {
+        const settings = Engine.ReadJSONFile("0ad_tts_data/intuitive_config.json");
+        // Reset all autociv settings to default. Custom autociv settings added won't be affected.
+        // if ( false && Engine.ConfigDB_GetValue("user", "profile.autociv.intuitive"))
+        // {
+        // Engine.ConfigDB_WriteValueToFile("user", "profile.autociv.intuitive","false", "config/user.cfg"); // dont reset always. only once
+
+
+		
+		const allHotkeys = new Set(Object.keys(Engine.GetHotkeyMap()));
+		for (const key in settings)
+		{
+			boonGUIConfig.set(key, settings[key]);
+			// state.showMessage = true;
+			let value = settings[key];
+			value = settings[key].replace(/\\"/g,'');
+			error('value: ' + value);
+			// Engine.ConfigDB_WriteValueToFile("user", key, value , "config/user.cfg"); // dont reset always. only once
+		}
+		// boonGUIConfig.save();
+
+	}
+	// if (state.showMessage)
+	// {
+	// 	function addReason(title, hotkey)
+	// 	{
+	// 		state.reasons.push(setStringTags(`${title}:`, { "font": "sans-bold-18" }));
+	// 		state.reasons.push(colorizeHotkey(`%(hotkey)s`, hotkey));
+	// 		state.reasons.push("");
+	// 	}
+
+	// 	addReason("Take the view of a unit", "boongui.camera.follow.fps");
+	// 	addReason("Toggle the stats overlay", "boongui.session.stats.toggle");
+	// 	addReason("Popup the quit dialog", "boongui.session.gui.exit");
+	// 	addReason("Next stats tab", "boongui.session.stats.nextMode");
+	// 	addReason("Previous stats tab", "boongui.session.stats.previousMode");
+	// }
+	// return state;
+}
+
+check_tts_Settings();

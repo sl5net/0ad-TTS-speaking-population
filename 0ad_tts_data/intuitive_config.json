@@ -1,5 +1,4 @@
 {
-    "hotkey.autociv.session.building.autotrain.disable": "Super+W",
     "hotkey.autociv.open.test": "Ctrl+A+T",
 	"hotkey.autociv.open.autociv_readme": "Shift+F4",
 	"hotkey.autociv.gamesetup.focus.chatInput": "Alt+Q",
@@ -56,7 +55,8 @@
     "hotkey.autociv.open.test": "Ctrl+A+T",
     "hotkey.autociv.selection.nowoundedonly": "K",
     "hotkey.autociv.session.building.autotrain.disable": "Super+W",
-    "hotkey.autociv.session.building.autotrain.enable": "\"V\", \"Y\", \"X\", \"Z\", \"C\", \"B\", \"N\", \"Semicolon\"",
+    "hotkey.autociv.session.building.autotrain.enable": "\"V\", \"Y\", \"X\", \"Z\", \"C\", \"B\", \"N\", \"Semicolon\", \"dumpf555\"",
+    "stupidTest": "\"huhi\"",
     "hotkey.autociv.session.building.place.amphitheater_pompeii": "",
     "hotkey.autociv.session.building.place.apadana": "",
     "hotkey.autociv.session.building.place.arch": "",
@@ -252,5 +252,5 @@
     "hotkey.autociv.session.stance.set.passive": "Alt+4",
     "hotkey.autociv.session.stance.set.standground": "Alt+5",
     "hotkey.autociv.session.stance.set.violent": "Alt+1",
-    "hotkey.session.queueunit.autoqueueon": "\"V\", \"Y\", \"X\", \"Z\", \"C\", \"B\", \"N\", \"Semicolon\"",
+    "hotkey.session.queueunit.autoqueueon": "\"V\", \"Y\", \"X\", \"Z\", \"C\", \"B\", \"N\", \"Semicolon\""
 }

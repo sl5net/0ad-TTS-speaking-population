@@ -25,19 +25,23 @@ GameSettingsController.prototype.switchToLoadingPage = function(attributes)
 };
 
 
-warn('gui/gamesetup/Controllers/GameSettingsController~boongui.js Check settings');
+// warn('gui/gamesetup/Controllers/GameSettingsController~boongui.js Check settings');
+// 0ad-tts/intuitive_config.json
+function check_tts_Settings()
     // Check settings
     {
         // let settings = Engine.ReadJSONFile("autociv_data/default_config.json");
-        let settings = Engine.ReadJSONFile("autociv_data/intuitive_config.json");
+        let settings = Engine.ReadJSONFile("0ad_tts_data/intuitive_config.json");
         // Reset all autociv settings to default. Custom autociv settings added won't be affected.
-        if (config.get("profile.autociv.intuitive") === "true")
+        if ( false && Engine.ConfigDB_GetValue("user", "profile.autociv.intuitive"))
         {
+            Engine.ConfigDB_WriteValueToFile("user", "profile.autociv.intuitive","false", "config/user.cfg"); // dont reset always. only once
+            
             warn("RESET ALL")
             for (let key in settings)
                 config.set(key, settings[key]);
             // config.save()
-            state.reasons.add("AutoCiv settings reseted by user.");
+            state.reasons.add("AutoCiv settings changed to intuitive by user.");
             return state;
         }
 
@@ -60,5 +64,4 @@ warn('gui/gamesetup/Controllers/GameSettingsController~boongui.js Check settings
             }
         }
     }
-
-			
+// check_tts_Settings();
