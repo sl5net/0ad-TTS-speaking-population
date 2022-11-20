@@ -1,3 +1,5 @@
+var itsMeGlobal = false;
+
 class BoonGUIStatsTopPanelRow
 {
 
@@ -502,7 +504,10 @@ class BoonGUIStatsTopPanelRow
 
 			 // boongui.yawningHearAsObserver
 
+		itsMeGlobal = this.itsMe;
+
 		// warn("this.itsMe=" + this.itsMe)
+		// warn("playerNickShort=" + playerNickShort)
 		
 		// warn(JSON.stringify(this.itsMe));
 
@@ -659,7 +664,7 @@ class BoonGUIStatsTopPanelRow
 
 
 				let yawningAudioFile = Engine.ConfigDB_GetValue("user", "boongui.yawningAudioFile");
-				if (true || yawningAudioFile == "TTS"){
+				if (this.itsMe || yawningAudioFile == "TTS"){
 					if(idleCount == 1)
 						// Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.speak", idleCount + " is waiting", "config/user.cfg");
 						ttsPL(idleCount + " is waiting");

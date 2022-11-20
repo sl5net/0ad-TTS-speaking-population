@@ -16,11 +16,41 @@ class BoonGUIStatsTopPanel {
 		this.TTY = {};
 		this.TTY.POPlast = {"food":0, "wood":0, "stone":0, "metal":0, "foodwood":0.0};
 
+		this.itsMe;
+		this.playername_multiplayer = Engine.ConfigDB_GetValue("user", "playername.multiplayer");
+		this.playername_singleplayer = Engine.ConfigDB_GetValue("user", "playername.singleplayer");
+
 	}
 
 	update(playersStates) {
 		this.root.hidden = false;
 		this.scales.reset();
+
+		// const playerNick = setStringTags(playersStates.nick, { "color": playersStates.playerColor });
+		// warn('playerNick = ' + JSON.stringify(playerNick));
+		// let playerNickShort = '';
+		// if (playerNick)
+		// 	try {
+		// 		playerNickShort = playerNick.match(/.*\](\w+)\[/)[1];
+		// 	} catch (error) {
+		// 		return
+		// 	 }
+		// warn(JSON.stringify(playersStates[0].name));
+		// warn(JSON.stringify(this.playername_singleplayer));
+
+
+
+		// tells only if i playing in the game. false if i observer. always in row 1
+		this.itsMe = (playersStates[0].name == this.playername_multiplayer || playersStates[0].name == this.playername_singleplayer);
+
+
+
+		// warn('this.itsMe = ' + this.itsMe);
+		// warn('itsMeGlobal = ' + itsMeGlobal); // always false
+		// warn(JSON.stringify(playersStates));
+		// warn(JSON.stringify(playersStates[0].name));
+		// warn(JSON.stringify(playersStates[1].name));
+
 		playersStates.forEach(state => {
 			this.scales.addValue("popCount", state.popCount);
 			this.scales.addValue("popLimit", state.popLimit);
@@ -42,11 +72,18 @@ class BoonGUIStatsTopPanel {
 				this.scales.addValue(`${resType}Gatherers`, state.resourceGatherers[resType]);
 				this.scales.addValue(`${resType}Rates`, state.resourceRates[resType]);
 
-				if( Engine.ConfigDB_GetValue("user", "boongui.TTStipsFromPopulation") == "true") {
+				// warn(JSON.stringify(state));
+				// warn(JSON.stringify(state.index));
+
+				if((this.itsMe && state.index == 1) // me is always in first row  means index is 1
+				&& Engine.ConfigDB_GetValue("user", "boongui.TTStipsFromPopulation") == "true") {
+
+					// warn("state.popCount=" + state.popCount);
 
 					if(state.popCount < 150){
 						let wf = 0;
 						let fw = 0;
+
 						if(state.resourceCounts['wood'] && state.resourceCounts['food']){
 							wf = Math.round(( state.resourceCounts['wood'] / state.resourceCounts['food'] )*10)/10;
 							fw = Math.round(( state.resourceCounts['food'] / state.resourceCounts['wood'] )*10)/10;
