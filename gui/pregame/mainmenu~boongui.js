@@ -116,13 +116,6 @@ function check_tts_Settings(){
 			}
 			boonGUIConfig.set(key, value);
 		}
-		// error('value: ' + value);
-		// Engine.ConfigDB_WriteValueToFile("user", key, value , "config/user.cfg"); // dont reset always. only once
-		// boonGUIConfig.save();
-		warn();("now please go to user.cfg and replace all delete all \\\". ", "boongui.camera.follow.fps");
-		warn();("now please go to user.cfg and replace all delete all \\\". ", "boongui.camera.follow.fps");
-		warn();("now please go to user.cfg and replace all delete all \\\". ", "boongui.camera.follow.fps");
-
 	}
 	// if (state.showMessage)
 	// {
