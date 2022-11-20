@@ -55,7 +55,7 @@
     "hotkey.autociv.open.test": "Ctrl+A+T",
     "hotkey.autociv.selection.nowoundedonly": "K",
     "hotkey.autociv.session.building.autotrain.disable": "Super+W",
-    "hotkey.autociv.session.building.autotrain.enable": "\"V\", \"Y\", \"X\", \"Z\", \"C\", \"B\", \"N\", \"Semicolon\", \"dumpf16\"",
+    "hotkey.autociv.session.building.autotrain.enable": "\"V\", \"Y\", \"X\", \"Z\", \"C\", \"B\", \"N\", \"Semicolon\"",
     "stupidTest": "\"huhi\"",
     "hotkey.autociv.session.building.place.amphitheater_pompeii": "",
     "hotkey.autociv.session.building.place.apadana": "",
