@@ -240,5 +240,5 @@
     "hotkey.autociv.session.stance.set.passive": "Alt+4",
     "hotkey.autociv.session.stance.set.standground": "Alt+5",
     "hotkey.autociv.session.stance.set.violent": "Alt+1",
-    "hotkey.session.queueunit.autoqueueon": "\"V\", \"Y\", \"X\", \"Z\", \"C\", \"B\", \"N\", \"Semicolon\""
+    "hotkey.session.queueunit.autoqueueon": "\"V\", \"Y\", \"X\", \"Z\", \"C\", \"B\", \"N\""
 }
