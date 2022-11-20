@@ -81,10 +81,10 @@ autociv_patchApplyN("init", function(target, that, args)
 );
 
 
-warn('check_tts_Settings()');
+// warn('check_tts_Settings()');
 function check_tts_Settings(){
 	    // Check settings
-	if ( Engine.ConfigDB_GetValue("user", "profile.autociv.intuitive"))
+	if ( Engine.ConfigDB_GetValue("user", "profile.autociv.intuitive") === "true")
     {
         const settings = Engine.ReadJSONFile("0ad_tts_data/intuitive_config.json");
         // Reset all autociv settings to default. Custom autociv settings added won't be affected.
@@ -95,16 +95,23 @@ function check_tts_Settings(){
 
 		
 		const allHotkeys = new Set(Object.keys(Engine.GetHotkeyMap()));
+
+		// Engine.ConfigDB_WriteValueToFile("user", "profile.autociv.intuitive","false", "config/user.cfg"); // dont reset always. only once
+		boonGUIConfig.set("profile.autociv.intuitive", "false");
+
 		for (const key in settings)
 		{
 			boonGUIConfig.set(key, settings[key]);
 			// state.showMessage = true;
 			let value = settings[key];
 			value = settings[key].replace(/\\"/g,'');
-			error('value: ' + value);
+			// error('value: ' + value);
 			// Engine.ConfigDB_WriteValueToFile("user", key, value , "config/user.cfg"); // dont reset always. only once
 		}
 		// boonGUIConfig.save();
+		warn();("now please go to user.cfg and replace all delete all \\\". ", "boongui.camera.follow.fps");
+		warn();("now please go to user.cfg and replace all delete all \\\". ", "boongui.camera.follow.fps");
+		warn();("now please go to user.cfg and replace all delete all \\\". ", "boongui.camera.follow.fps");
 
 	}
 	// if (state.showMessage)

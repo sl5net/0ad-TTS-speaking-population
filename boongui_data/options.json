@@ -271,7 +271,7 @@
 		"options": [
 			{
 				"type": "boolean",
-				"label": "[color=\"220 185 70\"]Profile selection[/color] AutoCiv Hotkey-Profiles",
+				"label": "[color=\"220 185 70\"]set to intuitive[/color] AutoCiv-Profiles",
 				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
 				"config": "profile.autociv.intuitive"
 			},
