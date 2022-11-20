@@ -19,6 +19,11 @@ Recomanded Config:
 
 ![Screenshot_20221120_083249](https://user-images.githubusercontent.com/5634759/202891078-87dd47d1-9448-423e-85f3-2e30cb78146e.jpg)
 
+## added extra Goody "AutoCiv Hotkey-Profiles"
+
+![Screenshot_20221120_170147](https://user-images.githubusercontent.com/5634759/202912459-99d77a1a-fd11-42ed-88da-c05174cdda7d.jpg)
+
+
 # install
 
 ## examples - maybe you need to do it a little bit different
