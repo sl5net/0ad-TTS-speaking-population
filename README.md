@@ -15,8 +15,9 @@ especially from:
 
 <a href="https://www.youtube.com/watch?v=b_-AXmcDIRs" target="_blank"><img src="http://img.youtube.com/vi/b_-AXmcDIRs/0.jpg" alt="Thumbnail" width="320" height="200" />
 
-![Screenshot_20221118_185727](https://user-images.githubusercontent.com/5634759/202771865-bdc6e5d6-fb02-4368-9eb9-7e0ec3551619.jpg)
+Recomanded Config:
 
+![Screenshot_20221120_083249](https://user-images.githubusercontent.com/5634759/202891078-87dd47d1-9448-423e-85f3-2e30cb78146e.jpg)
 
 # install
 
