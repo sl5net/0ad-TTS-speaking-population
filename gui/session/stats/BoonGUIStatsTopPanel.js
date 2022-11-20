@@ -75,7 +75,7 @@ class BoonGUIStatsTopPanel {
 				// warn(JSON.stringify(state));
 				// warn(JSON.stringify(state.index));
 
-				if((this.itsMe && state.index == 1) // me is always in first row  means index is 1
+				if((this.itsMe && state.index == 1) // host is always in first row  means index is 1 here. btw. as observer you maybe not host, so maybe not in first row. in single games you always in first row (if you playing)
 				&& Engine.ConfigDB_GetValue("user", "boongui.TTStipsFromPopulation") == "true") {
 
 					// warn("state.popCount=" + state.popCount);
