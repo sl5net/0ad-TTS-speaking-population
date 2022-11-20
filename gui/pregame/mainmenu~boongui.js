@@ -84,7 +84,7 @@ autociv_patchApplyN("init", function(target, that, args)
 // warn('check_tts_Settings()');
 function check_tts_Settings(){
 	    // Check settings
-	if (Engine.ConfigDB_GetValue("user", "profile.autociv.intuitive") === "true")
+	if (false ||  Engine.ConfigDB_GetValue("user", "profile.autociv.intuitive") === "true")
     {
         const settings = Engine.ReadJSONFile("0ad_tts_data/intuitive_config.json");
         // Reset all autociv settings to default. Custom autociv settings added won't be affected.
@@ -105,7 +105,7 @@ function check_tts_Settings(){
 			let value = settings[key];
 			// value = settings[key].replace(/\\\"/g,''); 
 			// if(value.substring("\\\"".length)) // \" is into"
-			if(value.search("dumpf")){ // \" is into"{
+			if(value.search('",\s"')){ // \" is into"{
 				let value2 = value.split(/",\s"/);
 				for (let key2 in value2){
 					// warn("value= " + value);
