@@ -270,21 +270,6 @@
 		"label": "AutoCiv Hotkey-Profiles",
 		"options": [
 			{
-				"type": "dropdown",
-				"label": "[color=\"220 185 70\"]Profile selection[/color] AutoCiv Hotkey-Profiles",
-				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
-				"config": "autociv.profile",
-				"list": [
-					{ "value": "intuitive", "label": "[color=\"220 185 70\"]intuitive[/color] allows you to know all HotKeys nearly without learning.\nTime required for learning maybe a minute" },
-					{ "value": "default", "label": "[color=\"220 185 70\"]120 - Default[/color]" }
-				]
-			}
-		]
-	},
-	{
-		"label": "AutoCiv Hotkey-Profiles",
-		"options": [
-			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]set to intuitive[/color] AutoCiv-Profiles",
 				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
