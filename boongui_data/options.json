@@ -278,8 +278,16 @@
 					{ "value": "intuitive", "label": "[color=\"220 185 70\"]intuitive[/color] allows you to know all HotKeys nearly without learning.\nTime required for learning maybe a minute" },
 					{ "value": "default", "label": "[color=\"220 185 70\"]120 - Default[/color]" }
 				]
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]Global:[/color] Reset all AutoCiv settings",
+				"tooltip": "Resets all AutoCiv (REQUIRES RESTART) (DOESN'T RESET CUSTOM AUTOCIV SETTINGS)",
+				"config": "autociv.settings.reset.all"
 			}
+		
 		]
 	}
+
 
 ]
