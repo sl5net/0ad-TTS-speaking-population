@@ -288,10 +288,80 @@
 		"label": "mod Profile Selector",
 		"options": [
 			{
+				"type": "string",
+				"label": "p0 (if you set checkbox to many profiles only the first will be used and enabled.",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"config": "modProfile.p0"
 			},
 			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]use 0[/color]",
+				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"config": "modProfile.p0enabled"
+			},
+			{
+				"type": "string",
+				"label": "p1",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"config": "modProfile.p1"
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]use 1[/color]",
+				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"config": "modProfile.p1enabled"
+			},
+			{
+				"type": "string",
+				"label": "p2",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"config": "modProfile.p2"
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]use 2[/color]",
+				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"config": "modProfile.p2enabled"
+			},
+			{
+				"type": "string",
+				"label": "p3",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"config": "modProfile.p3"
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]use 3[/color]",
+				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"config": "modProfile.p3enabled"
+			},
+
+			{
+				"type": "string",
+				"label": "p4",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"config": "modProfile.p4"
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]use 4[/color]",
+				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"config": "modProfile.p4enabled"
+			},
+
+			{
+				"type": "string",
+				"label": "p5",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"config": "modProfile.p5"
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]use 5[/color]",
+				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"config": "modProfile.p5enabled"
 			}
-		
+
 		]
 	}
 

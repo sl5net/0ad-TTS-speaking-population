@@ -105,8 +105,8 @@ function check_tts_Settings(){
 			let value = settings[key];
 			// value = settings[key].replace(/\\\"/g,''); 
 			// if(value.substring("\\\"".length)) // \" is into"
-			if(value.search('",\s"')){ // \" is into"{
-				let value2 = value.split(/",\s"/);
+			if(value.search('"\s*,\s*"')){ // \" is into"{
+				let value2 = value.split(/"\s*,\s*"/);
 				for (let key2 in value2){
 					// warn("value= " + value);
 					// warn("value3= " + value2[key2]);
@@ -117,22 +117,57 @@ function check_tts_Settings(){
 			boonGUIConfig.set(key, value);
 		}
 	}
-	// if (state.showMessage)
-	// {
-	// 	function addReason(title, hotkey)
-	// 	{
-	// 		state.reasons.push(setStringTags(`${title}:`, { "font": "sans-bold-18" }));
-	// 		state.reasons.push(colorizeHotkey(`%(hotkey)s`, hotkey));
-	// 		state.reasons.push("");
-	// 	}
-
-	// 	addReason("Take the view of a unit", "boongui.camera.follow.fps");
-	// 	addReason("Toggle the stats overlay", "boongui.session.stats.toggle");
-	// 	addReason("Popup the quit dialog", "boongui.session.gui.exit");
-	// 	addReason("Next stats tab", "boongui.session.stats.nextMode");
-	// 	addReason("Previous stats tab", "boongui.session.stats.previousMode");
-	// }
-	// return state;
 }
 
 check_tts_Settings();
+
+function saveThisModProfile(nr){
+	const modsFromUserCfg_const = Engine.ConfigDB_GetValue("user", "mod.enabledmods");
+
+	const modProfile = Engine.ConfigDB_GetValue("user", "modProfile.p" + nr);
+	if(!modProfile){
+		Engine.ConfigDB_WriteValueToFile("user", "modProfile.p" + nr, modsFromUserCfg_const, "config/user.cfg"); // fill it if its empty
+	}else{
+		const clean = modProfile.replaceAll(/[^\w\d_]+/g,' ');    
+		if(clean != modProfile){
+			Engine.ConfigDB_WriteValueToFile("user", "modProfile" + nr, clean, "config/user.cfg"); // 
+			warn();('modProfile.p1 saved with =' + clean + '=');
+		}
+	}
+}
+function enableThisModProfile(nr){
+	if(Engine.ConfigDB_GetValue("user", "modProfile.p" + nr + "enabled")== "true"){
+		const modsFromUserCfg_const = Engine.ConfigDB_GetValue("user", "mod.enabledmods");
+		const modProfile = Engine.ConfigDB_GetValue("user", "modProfile.p" + nr);
+		const clean = modProfile.replaceAll(/[^\w\d_\-]+/g,' ');    
+		if(clean != modsFromUserCfg_const){
+			warn("save:" + nr);
+			warn(clean);
+			// warn(modsFromUserCfg_const);
+			// warn("_____________________"); 
+			Engine.ConfigDB_WriteValueToFile("user", "mod.enabledmods", clean, "config/user.cfg"); 
+		}else
+			warn("dont save " + nr);
+		return true;
+	}
+	return false;
+}
+function check_modProfileSelector_settings(){ 
+	// Check settings
+	[...Array(6)].forEach(( _, k0_5 ) => saveThisModProfile(k0_5));  
+	// return false; 
+
+	let k0_5 = -1;
+	while(++k0_5 <= 5){
+		if(Engine.ConfigDB_GetValue("user", "modProfile.p" + k0_5 + "enabled")== "true"){
+			if(enableThisModProfile(k0_5)){
+				warn(k0_5 + " was saved"); 
+				return true; 
+			};
+			break;
+		}
+	}
+	return false; 
+} 
+
+check_modProfileSelector_settings();
