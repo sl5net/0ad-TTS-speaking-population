@@ -289,7 +289,7 @@
 		"options": [
 			{
 				"type": "string",
-				"label": "p0 (if you set checkbox to many profiles only the first will be used and enabled.",
+				"label": "p0 (if you set checkbox to many profiles only the first will be used and enabled. probably you need to resarte 0ad)",
 				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
 				"config": "modProfile.p0"
 			},
