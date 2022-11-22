@@ -289,6 +289,12 @@
 		"options": [
 			{
 				"type": "string",
+				"label": "([color=\"255 0 0\"]mod.enabledmods[/color]): will be overwitten maybe from somewhere.",
+				"tooltip": "will be overwitten\ndont edit.\nmods that you use at the moment",
+				"config": "mod.enabledmods"
+			},
+			{
+				"type": "string",
 				"label": "p0 (please resart game when you change something here)",
 				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
 				"config": "modProfile.p0"
@@ -359,6 +365,12 @@
 				"label": "[color=\"220 185 70\"]use 5[/color]",
 				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
 				"config": "modProfile.p5enabled"
+			},
+			{
+				"type": "string",
+				"label": "([color=\"255 0 0\"]backup[/color]): will be overwitten\ndont edit. what you have used before",
+				"tooltip": "will be overwitten\ndont edit",
+				"config": "modProfile.backup"
 			}
 		]
 	}

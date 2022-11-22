@@ -152,6 +152,7 @@ function enableThisModProfile(nr){
 			warn("is enabled next when 0ad is started.");
 			// warn(modsFromUserCfg_const);
 			// warn("_____________________"); 			
+			Engine.ConfigDB_WriteValueToFile("user", "modProfile.backup", modsFromUserCfg_const, "config/user.cfg"); 
 			Engine.ConfigDB_WriteValueToFile("user", "mod.enabledmods", clean, "config/user.cfg"); 
 			// return true;
 			// state.needsRestart = true;
