@@ -150,8 +150,9 @@ function enableThisModProfile(nr){
 			// warn("_____________________"); 			
 			Engine.ConfigDB_WriteValueToFile("user", "mod.enabledmods", clean, "config/user.cfg"); 
 
-		}else
+		}else{
 			warn("dont save " + nr);
+		}
 		return true;
 	}
 	return false;
@@ -160,18 +161,20 @@ function check_modProfileSelector_settings(){
 	// Check settings
 	[...Array(6)].forEach(( _, k0_5 ) => saveThisModProfile(k0_5));  
 	// return false; 
-
-	let k0_5 = -1;
+ 	let k0_5 = -1;
 	while(++k0_5 <= 5){
-		if(Engine.ConfigDB_GetValue("user", "modProfile.p" + k0_5 + "enabled")== "true"){
+		let nameOfCheckBox = "modProfile.p" + k0_5 + "enabled";
+		if(Engine.ConfigDB_GetValue("user", nameOfCheckBox)== "true"){
 			if(enableThisModProfile(k0_5)){
-				warn(k0_5 + " was saved"); 
+				warn("" + k0_5 + " was enabled as your default mod-configuration."); 
+				Engine.ConfigDB_WriteValueToFile("user", nameOfCheckBox, "false", "config/user.cfg"); 
+				warn(k0_5 + " checkBox disabled (if enabled have conflict with the normal mod selector)"); 
 				return true; 
 			};
-			break;
+			break; 
 		}
 	}
-	return false; 
+	return false;
 } 
 
-check_modProfileSelector_settings();
+check_modProfileSelector_settings(); // info
