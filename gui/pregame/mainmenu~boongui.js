@@ -125,27 +125,30 @@ function saveThisModProfile(nr){
 	const modsFromUserCfg_const = Engine.ConfigDB_GetValue("user", "mod.enabledmods");
 
 	const modProfile = Engine.ConfigDB_GetValue("user", "modProfile.p" + nr);
+	let clean = modProfile.replaceAll(/[^\w\d_]+/g,' ');
+	clean = modProfile.replaceAll(/\b(mod public)\b\s*/g,''); // mod public is default. boring to save it
 	if(!modProfile){
 		Engine.ConfigDB_WriteValueToFile("user", "modProfile.p" + nr, modsFromUserCfg_const, "config/user.cfg"); // fill it if its empty
 	}else{
-		const clean = modProfile.replaceAll(/[^\w\d_]+/g,' ');    
 		if(clean != modProfile){
-			Engine.ConfigDB_WriteValueToFile("user", "modProfile" + nr, clean, "config/user.cfg"); // 
+			Engine.ConfigDB_WriteValueToFile("user", "modProfile.p" + nr, clean, "config/user.cfg"); // 
 			warn();('modProfile.p1 saved with =' + clean + '=');
 		}
 	}
 }
-function enableThisModProfile(nr){
+function enableThisModProfile(nr){ 
 	if(Engine.ConfigDB_GetValue("user", "modProfile.p" + nr + "enabled")== "true"){
 		const modsFromUserCfg_const = Engine.ConfigDB_GetValue("user", "mod.enabledmods");
 		const modProfile = Engine.ConfigDB_GetValue("user", "modProfile.p" + nr);
-		const clean = modProfile.replaceAll(/[^\w\d_\-]+/g,' ');    
+		let clean = "mod public " + modProfile.replaceAll(/\b(mod public)\b\s*/g,' '); // mod public is default. boring to save it
+		clean = "mod public " + modProfile.replaceAll(/\b(mod public)\b\s*/g,''); // mod public is default. boring to save it in normal profiles. but dont forget it by enaable mods
 		if(clean != modsFromUserCfg_const){
 			warn("save:" + nr);
 			warn(clean);
 			// warn(modsFromUserCfg_const);
-			// warn("_____________________"); 
+			// warn("_____________________"); 			
 			Engine.ConfigDB_WriteValueToFile("user", "mod.enabledmods", clean, "config/user.cfg"); 
+
 		}else
 			warn("dont save " + nr);
 		return true;

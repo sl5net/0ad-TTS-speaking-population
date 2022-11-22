@@ -301,7 +301,7 @@
 			},
 			{
 				"type": "string",
-				"label": "p1",
+				"label": "p1 ('mod' and 'public' will be included later automatically.)",
 				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
 				"config": "modProfile.p1"
 			},
