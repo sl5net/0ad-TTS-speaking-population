@@ -140,7 +140,8 @@ function saveThisModProfile(nr){
 function enableThisModProfile(nr){ 
 	if(Engine.ConfigDB_GetValue("user", "modProfile.p" + nr + "enabled")== "true"){
 		const modsFromUserCfg_const = Engine.ConfigDB_GetValue("user", "mod.enabledmods");
-		const modProfile = Engine.ConfigDB_GetValue("user", "modProfile.p" + nr);
+		const profKey = "modProfile.p" + nr;
+		const modProfile = Engine.ConfigDB_GetValue("user", profKey);
 		let clean = "mod public " + modProfile.replaceAll(/\b(mod public)\b\s*/g,' '); // mod public is default. boring to save it
 		clean = "mod public " + modProfile.replaceAll(/\b(mod public)\b\s*/g,''); // mod public is default. boring to save it in normal profiles. but dont forget it by enaable mods
 		if(clean != modsFromUserCfg_const){
@@ -149,6 +150,11 @@ function enableThisModProfile(nr){
 			// warn(modsFromUserCfg_const);
 			// warn("_____________________"); 			
 			Engine.ConfigDB_WriteValueToFile("user", "mod.enabledmods", clean, "config/user.cfg"); 
+			// return true;
+			// state.needsRestart = true;
+			// configSaveToMemoryAndToDisk(key, settings[key]);
+			Engine.ConfigDB_CreateValue("user", "mod.enabledmods", clean);
+			// state.reasons.add("New mode-profile settings added.");
 
 		}else{
 			// warn("dont save " + nr);
@@ -168,6 +174,7 @@ function check_modProfileSelector_settings(){
 			if(enableThisModProfile(k0_5)){
 				warn("" + k0_5 + " was enabled as your default mod-configuration."); 
 				Engine.ConfigDB_WriteValueToFile("user", nameOfCheckBox, "false", "config/user.cfg"); 
+				Engine.ConfigDB_CreateValue("user", nameOfCheckBox, "false");
 				warn(k0_5 + " checkBox disabled (if enabled have conflict with the normal mod selector)"); 
 				return true; 
 			};
