@@ -5,7 +5,7 @@
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]Scroll[/color] speed",
-				"tooltip": "Set the speed at which you move across the map.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"tooltip": "Set the speed at which you move across the map.[color=\"255 0 0\"]RESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
 				"config": "view.scroll.speed",
 				"list": [
 					{ "value": "50.0", "label": "50 - Slower" },
@@ -19,7 +19,7 @@
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]Rotation[/color] speed: Horizontal",
-				"tooltip": "Set the speed at which you rotate left/right.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"tooltip": "Set the speed at which you rotate left/right.[color=\"255 0 0\"]RESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
 				"config": "view.rotate.x.speed",
 				"list": [
 					{ "value": "0.5", "label": "0.5 - Slower" },
@@ -33,7 +33,7 @@
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]Rotation[/color] speed: Vertical",
-				"tooltip": "Set the speed at which you rotate up/down.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"tooltip": "Set the speed at which you rotate up/down.[color=\"255 0 0\"]RESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
 				"config": "view.rotate.y.speed",
 				"list": [
 					{ "value": "1.1", "label": "1.1 - Slower" },
@@ -47,7 +47,7 @@
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]Zoom[/color] speed: Hotkey",
-				"tooltip": "Set the speed at which you zoom in/out with your hotkeys.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"tooltip": "Set the speed at which you zoom in/out with your hotkeys.[color=\"255 0 0\"]RESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
 				"config": "view.zoom.speed",
 				"list": [
 					{ "value": "150.0", "label": "150 - Slower" },
@@ -61,7 +61,7 @@
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]Zoom[/color] speed: Mouse wheel",
-				"tooltip": "Set the speed at which you zoom in/out with your mouse wheel.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"tooltip": "Set the speed at which you zoom in/out with your mouse wheel.[color=\"255 0 0\"]RESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
 				"config": "view.zoom.speed.wheel",
 				"list": [
 					{ "value": "15.0", "label": "15 - Slower" },
@@ -75,7 +75,7 @@
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]Zoom[/color] out distance",
-				"tooltip": "Set how far you can zoom out.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"tooltip": "Set how far you can zoom out.[color=\"255 0 0\"]RESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
 				"config": "view.zoom.max",
 				"list": [
 					{ "value": "200.0", "label": "[color=\"220 185 70\"]200 - Default[/color]" },
@@ -86,7 +86,7 @@
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]Zoom[/color] in distance",
-				"tooltip": "Set how close you can zoom in.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
+				"tooltip": "Set how close you can zoom in.[color=\"255 0 0\"]RESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color]",
 				"config": "view.zoom.min",
 				"list": [
 					{ "value": "10.0", "label": "10 - Closer" },
@@ -97,7 +97,7 @@
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]Windowed mode[/color] screen width",
-				"tooltip": "Screen width in windowed mode.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color][color=\"220 185 70\"]",
+				"tooltip": "Screen width in windowed mode.[color=\"255 0 0\"]RESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color][color=\"220 185 70\"]",
 				"config": "xres",
 				"list": [
 					{ "value": "1024", "label": "[color=\"220 185 70\"]1024 - Default[/color]" },
@@ -108,7 +108,7 @@
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]Windowed mode[/color] screen height",
-				"tooltip": "Screen height in windowed mode.[color=\"255 0 0\"]\nRESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color][color=\"220 185 70\"]",
+				"tooltip": "Screen height in windowed mode.[color=\"255 0 0\"]RESTART NECESSARY\nThis value is kept even if you disable the boonGUI mod.[/color][color=\"220 185 70\"]",
 				"config": "yres",
 				"list": [
 					{ "value": "768", "label": "[color=\"220 185 70\"]768 - Default[/color]" },
@@ -272,7 +272,7 @@
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]set to intuitive[/color] AutoCiv-Profiles",
-				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
 				"config": "profile.autociv.intuitive"
 			},
 			{
@@ -296,7 +296,7 @@
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]use 0[/color] not recomandet do set many checkboxses",
-				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
 				"config": "modProfile.p0enabled"
 			},
 			{
@@ -308,7 +308,7 @@
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]use 1[/color]",
-				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
 				"config": "modProfile.p1enabled"
 			},
 			{
@@ -320,7 +320,7 @@
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]use 2[/color]",
-				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
 				"config": "modProfile.p2enabled"
 			},
 			{
@@ -332,7 +332,7 @@
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]use 3[/color]",
-				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
 				"config": "modProfile.p3enabled"
 			},
 
@@ -345,7 +345,7 @@
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]use 4[/color]",
-				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
 				"config": "modProfile.p4enabled"
 			},
 			{
@@ -357,7 +357,7 @@
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]use 5[/color]",
-				"tooltip": "Set Hotkey-Profiles.\nPlease create Backup fist!!!!\n of you user.cfg-File.\n[color=\"255 0 0\"]\nBackup fist!!!![/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
 				"config": "modProfile.p5enabled"
 			}
 		]
