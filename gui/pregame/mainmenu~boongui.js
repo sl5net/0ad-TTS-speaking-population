@@ -151,7 +151,7 @@ function enableThisModProfile(nr){
 			Engine.ConfigDB_WriteValueToFile("user", "mod.enabledmods", clean, "config/user.cfg"); 
 
 		}else{
-			warn("dont save " + nr);
+			// warn("dont save " + nr);
 		}
 		return true;
 	}
