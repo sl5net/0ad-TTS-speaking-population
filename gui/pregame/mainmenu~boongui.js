@@ -147,6 +147,9 @@ function enableThisModProfile(nr){
 		if(clean != modsFromUserCfg_const){
 			warn("save:" + nr);
 			warn(clean);
+			error("RESTART NECESSARY");
+			warn(clean);
+			warn("is enabled next when 0ad is started.");
 			// warn(modsFromUserCfg_const);
 			// warn("_____________________"); 			
 			Engine.ConfigDB_WriteValueToFile("user", "mod.enabledmods", clean, "config/user.cfg"); 
