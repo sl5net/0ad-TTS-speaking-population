@@ -19,9 +19,17 @@ Recomanded Config:
 
 ![Screenshot_20221120_083249](https://user-images.githubusercontent.com/5634759/202891078-87dd47d1-9448-423e-85f3-2e30cb78146e.jpg)
 
-## added extra Goody "AutoCiv Hotkey-Profiles"
+## "AutoCiv Hotkey-Profiles" (extra Goody)
+
+should work platform independent (tested in ubuntu)
 
 ![Screenshot_20221120_170147](https://user-images.githubusercontent.com/5634759/202912459-99d77a1a-fd11-42ed-88da-c05174cdda7d.jpg)
+
+## "mod Profile Selector" (extra Goody)
+
+should work platform independent (tested in ubuntu)
+
+![Screenshot_20221122_191929](https://user-images.githubusercontent.com/5634759/203391378-b70801bc-96ad-480e-b0a9-26368a5fbd5f.jpg)
 
 
 # install
