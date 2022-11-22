@@ -128,7 +128,7 @@ function saveThisModProfile(nr){
 	let clean = modProfile.replaceAll(/[^\w\d_]+/g,' ');
 	clean = modProfile.replaceAll(/\b(mod public)\b\s*/g,''); // mod public is default. boring to save it
 	if(!modProfile){
-		Engine.ConfigDB_WriteValueToFile("user", "modProfile.p" + nr, modsFromUserCfg_const, "config/user.cfg"); // fill it if its empty
+		Engine.ConfigDB_WriteValueToFile("user", "modProfile.p" + nr, clean, "config/user.cfg"); // fill it if its empty
 	}else{
 		if(clean != modProfile){
 			Engine.ConfigDB_WriteValueToFile("user", "modProfile.p" + nr, clean, "config/user.cfg"); // 
