@@ -123,16 +123,17 @@ check_tts_Settings();
 
 function saveThisModProfile(nr){
 	const modsFromUserCfg_const = Engine.ConfigDB_GetValue("user", "mod.enabledmods");
-
 	const modProfile = Engine.ConfigDB_GetValue("user", "modProfile.p" + nr);
-	let clean = modProfile.replaceAll(/[^\w\d_]+/g,' ');
-	clean = modProfile.replaceAll(/\b(mod public)\b\s*/g,''); // mod public is default. boring to save it
 	if(!modProfile){
+		let clean = modsFromUserCfg_const.replaceAll(/[^\w\d_]+/g,' ');
+		clean = modsFromUserCfg_const.replaceAll(/\b(mod public)\b\s*/g,''); // mod public is default. boring to save it
 		Engine.ConfigDB_WriteValueToFile("user", "modProfile.p" + nr, clean, "config/user.cfg"); // fill it if its empty
 	}else{
+		let clean = modProfile.replaceAll(/[^\w\d_]+/g,' ');
+		clean = modProfile.replaceAll(/\b(mod public)\b\s*/g,''); // mod public is default. boring to save it
 		if(clean != modProfile){
 			Engine.ConfigDB_WriteValueToFile("user", "modProfile.p" + nr, clean, "config/user.cfg"); // 
-			warn();('modProfile.p1 saved with =' + clean + '=');
+			warn("modProfile.p" + nr + ' saved with =' + clean + '=');
 		}
 	}
 }
