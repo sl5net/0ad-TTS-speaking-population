@@ -126,11 +126,11 @@ function saveThisModProfile(nr){
 	const modProfile = Engine.ConfigDB_GetValue("user", "modProfile.p" + nr);
 	if(!modProfile){
 		let clean = modsFromUserCfg_const.replaceAll(/[^\w\d_]+/g,' ');
-		clean = modsFromUserCfg_const.replaceAll(/\b(mod public)\b\s*/g,''); // mod public is default. boring to save it
+		clean = modsFromUserCfg_const.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it
 		Engine.ConfigDB_WriteValueToFile("user", "modProfile.p" + nr, clean, "config/user.cfg"); // fill it if its empty
 	}else{
 		let clean = modProfile.replaceAll(/[^\w\d_]+/g,' ');
-		clean = modProfile.replaceAll(/\b(mod public)\b\s*/g,''); // mod public is default. boring to save it
+		clean = modProfile.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it
 		if(clean != modProfile){
 			Engine.ConfigDB_WriteValueToFile("user", "modProfile.p" + nr, clean, "config/user.cfg"); // 
 			warn("modProfile.p" + nr + ' saved with =' + clean + '=');
@@ -142,8 +142,8 @@ function enableThisModProfile(nr){
 		const modsFromUserCfg_const = Engine.ConfigDB_GetValue("user", "mod.enabledmods");
 		const profKey = "modProfile.p" + nr;
 		const modProfile = Engine.ConfigDB_GetValue("user", profKey);
-		let clean = "mod public " + modProfile.replaceAll(/\b(mod public)\b\s*/g,' '); // mod public is default. boring to save it
-		clean = "mod public " + modProfile.replaceAll(/\b(mod public)\b\s*/g,''); // mod public is default. boring to save it in normal profiles. but dont forget it by enaable mods
+		let clean = "mod public " + modProfile.replaceAll(/\b(mod\s+public)\b\s*/g,' '); // mod\s+public is default. boring to save it
+		clean = "mod public " + modProfile.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it in normal profiles. but dont forget it by enaable mods
 		if(clean != modsFromUserCfg_const){
 			warn("save:" + nr);
 			warn(clean);
