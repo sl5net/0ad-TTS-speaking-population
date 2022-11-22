@@ -32,7 +32,7 @@ should work platform independent (tested in ubuntu)
 ![Screenshot_20221122_191929](https://user-images.githubusercontent.com/5634759/203391378-b70801bc-96ad-480e-b0a9-26368a5fbd5f.jpg)
 
 
-# install
+# install if you want use TTS for Linux with autoKey (Python)
 
 ## examples - maybe you need to do it a little bit different
 ```sh
