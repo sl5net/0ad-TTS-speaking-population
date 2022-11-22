@@ -290,7 +290,7 @@
 			{
 				"type": "string",
 				"label": "([color=\"255 0 0\"]mod.enabledmods[/color]): will be overwitten maybe from somewhere.",
-				"tooltip": "will be overwitten\ndont edit.\nmods that you use at the moment",
+				"tooltip": "[color=\"255 0 0\"]will be overwitten\nbetter dont edit[/color].\nmods that you use at the moment",
 				"config": "mod.enabledmods"
 			},
 			{
@@ -369,7 +369,7 @@
 			{
 				"type": "string",
 				"label": "([color=\"255 0 0\"]backup[/color]): will be overwitten\ndont edit. what you have used before",
-				"tooltip": "will be overwitten\ndont edit",
+				"tooltip": "[color=\"255 0 0\"]will be overwitten\nbetter dont edit[/color]",
 				"config": "modProfile.backup"
 			}
 		]
