@@ -1,6 +1,6 @@
 {
   "name": "ttsSpeakingPopulation",
-  "version": "0.9",
+  "version": "1.0",
   "label": "0ad-TTS speaking population. TTS example working in linux",
   "description": "TTS-speaking-population for linux",
   "ignoreInCompatibilityChecks": true,
