@@ -29,7 +29,7 @@ should work platform independent (tested in ubuntu)
 
 should work platform independent (tested in ubuntu)
 
-![Screenshot_20221122_191929](https://user-images.githubusercontent.com/5634759/203391378-b70801bc-96ad-480e-b0a9-26368a5fbd5f.jpg)
+![Screenshot_20221123_154328](https://user-images.githubusercontent.com/5634759/203575363-1e24b7b4-af80-4b21-b109-d41c1a5f4fa9.jpg)
 
 
 # install if you want use TTS for Linux with autoKey (Python)
