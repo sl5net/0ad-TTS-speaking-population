@@ -196,6 +196,8 @@ class BoonGUIStatsTopPanelRow
 
 		const civ = g_CivData[state.civ];
 		const Emblem = civ.Emblem.replace(BoonGUIStatsTopPanelRow.Regex_Emblem, "$1");
+		// warn("199 Emblem = " + Emblem);
+		// warn("civ.Emblem = " + civ.Emblem);
 
 		this.civHighlight.sprite_over = "cropped:1,0.6506:" + "session/portraits/emblems/states/hover.png";
 		this.civIcon.sprite = "cropped:1,0.6506:" + civ.Emblem;
@@ -521,13 +523,27 @@ class BoonGUIStatsTopPanelRow
 
 			this.popLimitInt = this.popLimit.caption.match(/.*\](\d+)\[/)[1];
 			if(this.itsMe && this.statPopCount + 5 > this.popLimitInt 
-				&& this.popLimitIntOD != this.popLimitInt ){
+				&& this.popLimitIntOLD != this.popLimitInt ){
 				const msg = "We nearly housed. build more housese";
 				if(Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true")
 					error(msg);
 				if(Engine.ConfigDB_GetValue("user", "boongui.TTStipsFromPopulation") == "true")
 					ttsPL(msg);
-				this.popLimitIntOD = this.popLimitInt;
+				this.popLimitIntOLD = this.popLimitInt;
+			}
+
+			if(this.itsMe 
+				&& this.popLimitIntOLD != this.popLimitInt
+				&& this.statPopCount + 20 > this.popLimitInt  
+				&& this.statPopCount - 40 < this.popLimitInt  
+				){
+				let diffToMax = this.popLimitInt - this.statPopCount;
+				const msg = diffToMax + "to popMax.";
+				if(Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true")
+					error(msg);
+				if(Engine.ConfigDB_GetValue("user", "boongui.TTStipsFromPopulation") == "true")
+					ttsPL(msg);
+				this.popLimitIntOLD = this.popLimitInt;
 			}
 
 

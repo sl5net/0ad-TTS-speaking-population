@@ -164,7 +164,39 @@ function ttsPL(msg){
 	let doSpeak = false;
 	if (!msgDateInMap) {
 		// warn("AudioTTSspeak.set");
-		doSpeak = true;
+
+		const lastSpeakDateInMap = AudioTTSspeak.get('"lastSpeak"') // undefined only once ! very first visit of this function
+		const lastSpeakDiffSeconds = Math.abs(date - lastSpeakDateInMap) / 1000;
+		// if(!lastSpeakDateInMap) // then its undefined. this should happen only once ! thats great
+		// {
+			// const msg = "172 lastSpeakDateInMap = " + lastSpeakDateInMap;
+			// warn(msg);
+			// const title = setStringTags("msg", { "font": "sans-bold-14" });
+			// const message = setStringTags(msg, { "font": "sans-bold-20" });
+			// messageBox(300, 200, message, title, ["Ok"], [() => { 
+			//  }]);
+		// }else{ // happens :) nice it works
+			// const msg = "172 lastSpeakDateInMap = " + lastSpeakDateInMap;
+			// warn(msg);
+			// const title = setStringTags("msg", { "font": "sans-bold-14" });
+			// const message = setStringTags(msg, { "font": "sans-bold-20" });
+			// messageBox(300, 200, message, title, ["Ok"], [() => { 
+			//  }]);
+		// }
+
+		if(!lastSpeakDateInMap || lastSpeakDiffSeconds > 2){ // dont remind if last reminder was before 10 seconds
+			doSpeak = true;
+			// warn("173 true");
+		}else{
+			if(false){ //  && "proof how ofent this happens"
+				const msg = "173 false";
+				warn(msg);
+				const title = setStringTags("msg", { "font": "sans-bold-14" });
+				const message = setStringTags(msg, { "font": "sans-bold-20" });
+				messageBox(300, 200, message, title, ["Ok"], [() => { 
+				}]);
+			}
+		}
 	}else{
 		const diffSeconds = Math.abs(date - msgDateInMap) / 1000;
 		// warn("diffSeconds=" + diffSeconds);
@@ -180,7 +212,7 @@ function ttsPL(msg){
 		const isoDateTime = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString();
 		Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.timestamp","" + isoDateTime, "config/user.cfg");
 		AudioTTSspeak.set(msgWithoutNumber, date);
-	}
+		AudioTTSspeak.set('"lastSpeak"', date);	}
 
 }
 
