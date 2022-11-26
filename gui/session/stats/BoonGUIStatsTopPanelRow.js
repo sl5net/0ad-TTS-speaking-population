@@ -21,16 +21,13 @@ class BoonGUIStatsTopPanelRow
 			""
 			];
 
-		this.personalizeSayed = 0;
-		let msg = Engine.ConfigDB_GetValue("user", "AudioTTS.wantBeCalled");
+		this.personalizeArryListSayed = 0;
+		this.personalizeArryList = []; // first elemente empty so the TTY start bit later
+		let msg="";
+		msg = Engine.ConfigDB_GetValue("user", "AudioTTS.wantBeCalled");
 		msg = "Guten Morgen " + msg;
-		if(msg){
-		this.personalize = [
-			"",
-			msg,
-			""
-			];
-		}
+		if(msg)
+			this.personalizeArryList[0] = msg; 
 
 		// ty for https://wildfiregames.com/forum/topic/64941-0ad-guide-from-nub-to-op/?do=findComment&comment=470369
 		this.tipsFromKatePDF = [
@@ -49,10 +46,10 @@ class BoonGUIStatsTopPanelRow
 			, "Masbe use formations to keep them together. Close and Box are the most common ones."
 		]
 
-		Object.assign(this.personalize, this.tipsFromKatePDF);
+		this.personalizeArryList = this.personalizeArryList.concat( this.tipsFromKatePDF);
 
 		if(Engine.ConfigDB_GetValue("user", "boongui.hotKeyExplained") == "true")
-			Object.assign(this.personalize, this.hotKeyExplainedTipsList);
+			this.personalizeArryList = this.personalizeArryList.concat( this.hotKeyExplainedTipsList);
 
 		this.root = Engine.GetGUIObjectByName(PREFIX);
 		this.root.size = BoonGUIGetRowSize(index, 26);
@@ -573,53 +570,53 @@ class BoonGUIStatsTopPanelRow
 
 
 			if(this.itsMe == true
-				&& this.personalize.length > 0
-				&& this.personalize_atPopCount != this.statPopCount){
-				let msg = this.personalize.shift();
+				&& this.personalizeArryList.length > 0
+				&& this.personalizeArryList_atPopCount != this.statPopCount){
+				let msg = this.personalizeArryList.shift();
 
-				// this.personalize.push("die spielt mit " + this.state.civ); 
-				// warn("353: " + JSON.stringify(this.personalize));
-				// warn("373: personalizeSayed = " + this.personalizeSayed);
+				// this.personalizeArryList.push("die spielt mit " + this.state.civ); 
+				// warn("353: " + JSON.stringify(this.personalizeArryList));
+				// warn("373: personalizeArryListSayed = " + this.personalizeArryListSayed);
 				// warn("373:this.state.civ = " + this.state.civ);
 				
-				if(this.personalizeSayed == 1){
+				if(this.personalizeArryListSayed == 1){
 					msg = msg + ". you playing with Civilization " + this.state.civ + " .";
 					// warn('5585:' + msg);
 					if(this.state.civ == "mace"){
-						this.personalize.push(" Spearman-Cavalry from phase 1.");
-						this.personalize.push(" Javelineers-Infrantry (range of 30meters) from phase 1.");
+						this.personalizeArryList.push(" Spearman-Cavalry from phase 1.");
+						this.personalizeArryList.push(" Javelineers-Infrantry (range of 30meters) from phase 1.");
 					}else
 					if(this.state.civ == "sele" || this.state.civ == "gaul" || this.state.civ == "iber" || this.state.civ == "spart"){
-						this.personalize.push(" Javelineers-Cavalry from phase 1(range of 30meters).");
-						this.personalize.push(" Javelineers-Infrantry (range of 30meters) from phase 1.");
+						this.personalizeArryList.push(" Javelineers-Cavalry from phase 1(range of 30meters).");
+						this.personalizeArryList.push(" Javelineers-Infrantry (range of 30meters) from phase 1.");
 					}else
 					if(this.state.civ == "pers" || this.state.civ == "cart" || this.state.civ == "kush" || this.state.civ == "maur"){
-						this.personalize.push(" Javelineers-Cavalry from phase 1(range of 30meters).");
-						this.personalize.push(" Archer-Infrantry (range of 60meters) from phase 1.");
+						this.personalizeArryList.push(" Javelineers-Cavalry from phase 1(range of 30meters).");
+						this.personalizeArryList.push(" Archer-Infrantry (range of 60meters) from phase 1.");
 						if(this.state.civ == "pers")
-							this.personalize.push(" in Phase 2 has also Axeman-, Spearman- and Archer-Cavalry.");
+							this.personalizeArryList.push(" in Phase 2 has also Axeman-, Spearman- and Archer-Cavalry.");
 						else if(this.state.civ == "cart")
-							this.personalize.push(" update Colonization for 25% less resouce const and fast build time. (costs 250metal, 250wood))");
+							this.personalizeArryList.push(" update Colonization for 25% less resouce const and fast build time. (costs 250metal, 250wood))");
 						else if(this.state.civ == "kush"){
-							this.personalize.push(" update Mon-Architecture for 20% health/captureTime(costs 300stone)");
+							this.personalizeArryList.push(" update Mon-Architecture for 20% health/captureTime(costs 300stone)");
 						}
 						else if(this.state.civ == "maur"){
-							this.personalize.push(" Worker Elefant cost 100food. (only available in Civilization " + this.state.civ + ")");
+							this.personalizeArryList.push(" Worker Elefant cost 100food. (only available in Civilization " + this.state.civ + ")");
 						}
 						else if(this.state.civ == "spart")
-							this.personalize.push("update Hop-Tradition for 25% training and experiance(costs 300metal, 400food)");
+							this.personalizeArryList.push("update Hop-Tradition for 25% training and experiance(costs 300metal, 400food)");
 					}else
 					if(this.state.civ == "athen" || this.state.civ == "brit"){
-						this.personalize.push(" Javelineers-Cavalry from phase 1(range of 30meters, speed of 16).");
-						this.personalize.push(" Slinger-Infrantry (range of 45meters) from phase 1.");
+						this.personalizeArryList.push(" Javelineers-Cavalry from phase 1(range of 30meters, speed of 16).");
+						this.personalizeArryList.push(" Slinger-Infrantry (range of 45meters) from phase 1.");
 					}else
 					if(this.state.civ == "han" ){
-						this.personalize.push(" Swordsman-Cavalry from phase 1.");
-						this.personalize.push(" Archer-Infrantry (with only a range of 45meters, not 60meters) from phase 1.");
+						this.personalizeArryList.push(" Swordsman-Cavalry from phase 1.");
+						this.personalizeArryList.push(" Archer-Infrantry (with only a range of 45meters, not 60meters) from phase 1.");
 					}else
 					if(this.state.civ == "ptol" ){
-						this.personalize.push(" Archer-Cavalry from phase 1(range of 60meters, Camels only have a speed of 15).");
-						this.personalize.push(" Slinger-Infrantry (range of 45meters, not 60meters) from phase 1.");
+						this.personalizeArryList.push(" Archer-Cavalry from phase 1(range of 60meters, Camels only have a speed of 15).");
+						this.personalizeArryList.push(" Slinger-Infrantry (range of 45meters, not 60meters) from phase 1.");
 					}
 
 					// 14 civs
@@ -628,7 +625,7 @@ class BoonGUIStatsTopPanelRow
 					|| this.state.civ == "ptol"
 					|| this.state.civ == "iber"
 						){
-						this.personalize.push(" House-Build-Time is 30. Space for 3 people. 30/3 is 10");
+						this.personalizeArryList.push(" House-Build-Time is 30. Space for 3 people. 30/3 is 10");
 					}else
 					// House-Build-Time 8,3
 					if(this.state.civ == "athen"
@@ -641,22 +638,22 @@ class BoonGUIStatsTopPanelRow
 					|| this.state.civ == "spart"
 					|| this.state.civ == "rome"
 					){
-						this.personalize.push( this.personalizeSayed + ": House-Build-Time is 50. Space for 6 people. 50/6 is a nomal 8,3 speed.");
+						this.personalizeArryList.push( this.personalizeArryListSayed + ": House-Build-Time is 50. Space for 6 people. 50/6 is a nomal 8,3 speed.");
 					}
 					// House-Build-Time 8
 					else if(this.state.civ == "brit" 
 						|| this.state.civ == "gaul"
 						)
-						this.personalize.push(" House-Build-Time is 24. Space for 3 people. 24/3 is 8");
+						this.personalizeArryList.push(" House-Build-Time is 24. Space for 3 people. 24/3 is 8");
 
 				}
 
 				ttsPL(msg + " ");
 				// warn('5585:' + msg);
-				this.personalize_atPopCount = this.statPopCount;
-				this.personalizeSayed++;
+				this.personalizeArryList_atPopCount = this.statPopCount;
+				this.personalizeArryListSayed++;
 
-				// this.personalize_atPopCount = this.statPopCount;
+				// this.personalizeArryList_atPopCount = this.statPopCount;
 				// war
 			}
 
