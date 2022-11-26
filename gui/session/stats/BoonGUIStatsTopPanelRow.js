@@ -10,14 +10,6 @@ class BoonGUIStatsTopPanelRow
 		const PREFIX = row.name;
 
 
-		// wometimes saved here ~/.config/0ad/config/user.cfg or eventually sometimes here ~/git/0a26/binaries/data/config/
-		// Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.speak", "hello_world 12", "config/user.cfg");
-		// Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.speak", "hello speak this 13", "config/user.cfg");
-        // Engine.ConfigDB_CreateValue("TTS", "AudioTTS.speak", "test me 14");
-		// Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.speak", "hello speak this 15", "config/user.cfg");
-        // Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.speak", "what is this", "config/tts.cfg");
-
-
 		this.hotKeyExplainedTipsList = [ 
 			"Beginners can't remember the hotkeys?",
 			"build Building: Press the first Letter of a Building-Name (or press several times for toggling Buildings).",
@@ -40,7 +32,7 @@ class BoonGUIStatsTopPanelRow
 			];
 		}
 
-		this.personalize = [
+		this.tipsFromKatePDF = [
 			""
 			, "Send the 4 women to gather berries."
 			, "Send 4 men to gather wood. Eventually build a storehouse near a large woodline."
