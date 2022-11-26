@@ -280,7 +280,7 @@
 			{
 				"type": "string",
 				"label": "[color=\"220 185 70\"]TTS for this Playerper also[/color]",
-				"tooltip": "[color=\"255 0 0\"][/color]",
+				"tooltip": "[color=\"255 0 0\"]if empty it proably is only for yourself[/color]",
 				"config": "AudioTTS_onlyForThisPlayerAlias"
 			},
 			{
