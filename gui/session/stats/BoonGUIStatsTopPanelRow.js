@@ -542,7 +542,7 @@ class BoonGUIStatsTopPanelRow
 
 			if(this.itsMe 
 				&& this.voiceInfosExtra.popMax >= 1
-				&& this.voiceInfosExtra.popMax < 10
+				&& this.voiceInfosExtra.popMax < 7
 				&& this.statPopCount + 50 > this.state.popMax) // this.itsMe && 
 			{
 				const diff =  this.state.popMax - this.statPopCount ;
