@@ -38,15 +38,23 @@ class BoonGUIStatsTopPanelRow
 			msg,
 			""
 			];
-
-				// if(this.state.civ == 'ptol'){
-				// 	warn(this.state.civ + ':range:P1 slingers(30m) archers(60m): Stable(P1), Barack(P2), Hero(P3), 90m/4s:BoltS.(P3), 10/60/75: Towser');
-				// }
-
-
 		}
 
+		this.personalize = [
+			""
+			, "Send the 4 women to gather berries."
+			, "Send 4 men to gather wood. If there is wood near your CC then collect those first, otherwise, build a storehouse near a large woodline."
+			, "Send the cavalry to hunt chickens."
+			, "When women have been trained, send them to build a farmstead near the berries and queue up 3 more."
+			, "Make sure some farms have been constructed and in operation before you run out of berries."
+			, "As soon as you reach town phase (phase 2), send the newly trained units to build 2 blacksmiths and 1 market."
+			, "Once the 2 blacksmiths and 1 market have been constructed, click up to P3."
+			, "In total, you may should have about 7 infantry barracks. Cavalry stables maybe. "
+			, "When you reach P3, build siege workshop immediately and produce rams from it. Elephant civs can use elephants instead. Also get hero trained."
+			, "Masbe use formations to keep them together. Close and Box are the most common ones."
+		]
 
+		Object.assign(this.personalizeSayed, this.tipsFromKatePDF);
 
 		this.root = Engine.GetGUIObjectByName(PREFIX);
 		this.root.size = BoonGUIGetRowSize(index, 26);
