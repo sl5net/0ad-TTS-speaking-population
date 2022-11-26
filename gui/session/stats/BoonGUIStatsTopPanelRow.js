@@ -570,11 +570,11 @@ class BoonGUIStatsTopPanelRow
 				// this.personalize.push("die spielt mit " + this.state.civ); 
 				// warn("353: " + JSON.stringify(this.personalize));
 				// warn("373: personalizeSayed = " + this.personalizeSayed);
-				warn("373:this.state.civ = " + this.state.civ);
+				// warn("373:this.state.civ = " + this.state.civ);
 				
 				if(this.personalizeSayed == 1){
 					msg = msg + ". you playing with Civilization " + this.state.civ + " .";
-					warn('5585:' + msg);
+					// warn('5585:' + msg);
 					if(this.state.civ == "mace"){
 						this.personalize.push(" Spearman-Cavalry from phase 1.");
 						this.personalize.push(" Javelineers-Infrantry (range of 30meters) from phase 1.");
