@@ -54,7 +54,10 @@ class BoonGUIStatsTopPanelRow
 			, "Masbe use formations to keep them together. Close and Box are the most common ones."
 		]
 
-		Object.assign(this.personalizeSayed, this.tipsFromKatePDF);
+		Object.assign(this.personalize, this.tipsFromKatePDF);
+
+		if(Engine.ConfigDB_GetValue("user", "boongui.hotKeyExplained") == "true")
+			Object.assign(this.personalize, this.hotKeyExplainedTipsList);
 
 		this.root = Engine.GetGUIObjectByName(PREFIX);
 		this.root.size = BoonGUIGetRowSize(index, 26);
@@ -561,7 +564,7 @@ class BoonGUIStatsTopPanelRow
 				&& this.statPopCount - 40 < this.popLimitInt  
 				){
 				let diffToMax = this.popLimitInt - this.statPopCount;
-				const msg = diffToMax + "to popMax.";
+				const msg = diffToMax + "to pop Limit.";
 				if(Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true")
 					error(msg);
 				if(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation") == "true")
