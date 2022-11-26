@@ -149,7 +149,7 @@
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]yawning idle[/color] from the start time of a game.",
 				"tooltip": "if used, the idle button can NOT be used anymore to find people who are idling. \n\nThe Button then is for toggle the yawning sound, throughout the total playing time.\n\n the hotkeys to find idles, of course, still working.\n\nchange only has an effect from the next game",
-				"config": "boongui.yawningIdlePopMax",
+				"config": "AudioTTS.yawningIdlePopMax",
 				"list": [
 					{ "value": "0.0", "label": "[color=\"220 185 70\"]no yawning for idles - recommended[/color]" },
 					{ "value": "50.0", "label": "< 50 yawning only until 50 population" },
@@ -162,7 +162,7 @@
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]yawning idle[/color] frequency.",
 				"tooltip": "pause in seconds beetween in seconds",
-				"config": "boongui.yawningPauseMiliSeconds",
+				"config": "AudioTTS.yawningPauseMiliSeconds",
 				"list": [
 					{ "value": "1", "label": "[color=\"220 185 70\"]about every 1 seconds - recommended[/color]" },
 					{ "value": "2", "label": "about every 2 seconds" },
@@ -175,7 +175,7 @@
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]yawning idle[/color] duration.",
 				"tooltip": "how long your idle shoud yawning",
-				"config": "boongui.yawningDuration",
+				"config": "AudioTTS.yawningDuration",
 				"list": [
 					{ "value": "1", "label": "[color=\"220 185 70\"]1 seconds - recommended[/color]" },
 					{ "value": "2", "label": "2 seconds" },
@@ -187,7 +187,7 @@
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]EXPERIMENTAL: yawning idle rememer again[/color] rememer you much later again.",
 				"tooltip": "if your idle stay very long, you have maybe forgot them, they could star yawning again",
-				"config": "boongui.yawningAginMuchLater",
+				"config": "AudioTTS.yawningAginMuchLater",
 				"list": [
 					{ "value": "3", "label": "[color=\"220 185 70\"]in 3 seconds - recommended[/color]" },
 					{ "value": "4", "label": "in 4 seconds" },
@@ -198,7 +198,7 @@
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]yawning Sound[/color]",
 				"tooltip": "yawning Audio File",
-				"config": "boongui.yawningAudioFile",
+				"config": "AudioTTS.yawningAudioFile",
 				"list": [
 					{ "value": "yawning-long.ogg", "label": "yawning-long" },
 					{ "value": "yawning.ogg", "label": "yawning" },
@@ -215,26 +215,26 @@
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]yawning: Hear all Players[/color]",
 				"tooltip": "as an observer hear all players speak at the same time",
-				"config": "boongui.yawningHearAllPlayers",
+				"config": "AudioTTS.yawningHearAllPlayers",
 				"list": [
 					{ "value": "", "label": "[color=\"220 185 70\"]Hear only myself[/color]" },
 					{ "value": "hearAll", "label": "Hear all Players" }
 				]
 			},
 
-		{
-			"type": "boolean",
-			"label": "[color=\"220 185 70\"]yawning: Hear as observer (not implemented)[/color]",
-			"tooltip": "Hear all also as observer (not recomandet)",
-			"config": "boongui.yawningHearAsObserver"
-		},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]yawning: Hear as observer (not implemented)[/color]",
+				"tooltip": "Hear all also as observer (not recomandet)",
+				"config": "AudioTTS.yawningHearAsObserver"
+			},
 
 
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]yawning count[/color]: and show all interruptions by Idle(EXPERIMENTAL)",
 				"tooltip": "count and show all interruptions by Idle EXPERIMENTAL shows as error message",
-				"config": "boongui.yawningShowInterruptionsByIdle",
+				"config": "AudioTTS.yawningShowInterruptionsByIdle",
 				"list": [
 					{ "value": "", "label": "no text messages with interruptions statistic" },
 					{ "value": "showAllCount", "label": "show all" }
@@ -250,20 +250,34 @@
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]TTS tips[/color] population Speech tips to you (EXPERIMENTAL)",
 				"tooltip": "population gives you tips (Speech to you)  ",
-				"config": "boongui.TTStipsFromPopulation"
+				"config": "AudioTTS.tipsFromPopulation"
 			},
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]tips[/color]itsWorldCup(EXPERIMENTAL)",
 				"tooltip": "itsWorldCup welcome message and greeting voice",
-				"config": "boongui.itsWorldCup"
+				"config": "AudioTTS.itsWorldCup"
 			},
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]tips[/color]explain easiest hotkey-config for beginners (seeh-hotKeys-config) (EXPERIMENTAL)",
 				"tooltip": "explain hotKeys configuration from seeh",
 				"config": "boongui.hotKeyExplained"
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]tips[/color]TTS- explain easiest hotkey-config for beginners (seeh-hotKeys-config) (EXPERIMENTAL)",
+				"tooltip": "explain hotKeys configuration from seeh by AudioTTS",
+				"config": "AudioTTS.hotKeyExplained"
+			},
+			{
+				"type": "string",
+				"label": "[color=\"220 185 70\"]personalize[/color]: how you want be called?",
+				"tooltip": "[color=\"255 0 0\"]how you want be called?[/color]",
+				"config": "AudioTTS.wantBeCalled"
 			}
+
+
 		]
 	},
 	{

@@ -1,9 +1,11 @@
 var AudioTTSspeak = new Map();
 
-
 class BoonGUIStatsTopPanel {
 
 	constructor() {
+		const date = new Date();
+		AudioTTSspeak.set('"lastSpeak"', date);	// fake time. works akso without. maybe at very first time no need to store message to config then
+
 		const PREFIX = "StatsTopPanel";
 		this.root = Engine.GetGUIObjectByName(PREFIX);
 		this.headerContainer = Engine.GetGUIObjectByName(`${PREFIX}Header`);
@@ -76,7 +78,7 @@ class BoonGUIStatsTopPanel {
 				// warn(JSON.stringify(state.index));
 
 				if((this.itsMe && state.index == 1) // host is always in first row  means index is 1 here. btw. as observer you maybe not host, so maybe not in first row. in single games you always in first row (if you playing)
-				&& Engine.ConfigDB_GetValue("user", "boongui.TTStipsFromPopulation") == "true") {
+				&& Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation") == "true") {
 
 					// warn("state.popCount=" + state.popCount);
 
@@ -212,7 +214,7 @@ function ttsPL(msg){
 		const isoDateTime = new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString();
 		Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.timestamp","" + isoDateTime, "config/user.cfg");
 		AudioTTSspeak.set(msgWithoutNumber, date);
-		AudioTTSspeak.set('"lastSpeak"', date);	}
-
+		AudioTTSspeak.set('"lastSpeak"', date);
+	}
 }
 

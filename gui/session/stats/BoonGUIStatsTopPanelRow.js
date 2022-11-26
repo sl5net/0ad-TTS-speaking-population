@@ -29,6 +29,23 @@ class BoonGUIStatsTopPanelRow
 			""
 			];
 
+		this.personalizeSayed = 0;
+		let msg = Engine.ConfigDB_GetValue("user", "AudioTTS.wantBeCalled");
+		msg = "Guten Morgen " + msg;
+		if(msg){
+		this.personalize = [
+			"",
+			msg,
+			""
+			];
+
+				// if(this.state.civ == 'ptol'){
+				// 	warn(this.state.civ + ':range:P1 slingers(30m) archers(60m): Stable(P1), Barack(P2), Hero(P3), 90m/4s:BoltS.(P3), 10/60/75: Towser');
+				// }
+
+
+		}
+
 
 
 		this.root = Engine.GetGUIObjectByName(PREFIX);
@@ -72,8 +89,6 @@ class BoonGUIStatsTopPanelRow
 
 		this.voiceInfosExtra = { 
 			"popMax" : 0,
-			"isbn" : "344254565X",
-			"autor" : "Pratchet",
 			"pubdate" : "15.8.2005"
 		}
 
@@ -94,7 +109,7 @@ class BoonGUIStatsTopPanelRow
 		this.playername_singleplayer = Engine.ConfigDB_GetValue("user", "playername.singleplayer");
 
 		// ANCHOR Engine.ConfigDB_GetValue
-		if( parseInt(Engine.ConfigDB_GetValue("user", "boongui.yawningIdlePopMax")) > 0)
+		if( parseInt(Engine.ConfigDB_GetValue("user", "AudioTTS.yawningIdlePopMax")) > 0)
 		{
 			this.yawningIdle = true;
 			this.idleWorkerHighlight.onPress = () => {
@@ -504,7 +519,7 @@ class BoonGUIStatsTopPanelRow
 		// warn("mp=" + this.playername_singleplayer) // its for me x often if i play local.
 		// ANCHOR - idk how to find out if i ovserver or not.
 
-			 // boongui.yawningHearAsObserver
+			 // AudioTTS.yawningHearAsObserver
 
 		itsMeGlobal = this.itsMe;
 
@@ -527,7 +542,7 @@ class BoonGUIStatsTopPanelRow
 				const msg = "We nearly housed. build more housese";
 				if(Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true")
 					error(msg);
-				if(Engine.ConfigDB_GetValue("user", "boongui.TTStipsFromPopulation") == "true")
+				if(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation") == "true")
 					ttsPL(msg);
 				this.popLimitIntOLD = this.popLimitInt;
 			}
@@ -541,11 +556,99 @@ class BoonGUIStatsTopPanelRow
 				const msg = diffToMax + "to popMax.";
 				if(Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true")
 					error(msg);
-				if(Engine.ConfigDB_GetValue("user", "boongui.TTStipsFromPopulation") == "true")
+				if(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation") == "true")
 					ttsPL(msg);
 				this.popLimitIntOLD = this.popLimitInt;
 			}
 
+
+			if(this.itsMe == true
+				&& this.personalize.length > 0
+				&& this.personalize_atPopCount != this.statPopCount){
+				let msg = this.personalize.shift();
+
+				// this.personalize.push("die spielt mit " + this.state.civ); 
+				// warn("353: " + JSON.stringify(this.personalize));
+				// warn("373: personalizeSayed = " + this.personalizeSayed);
+				warn("373:this.state.civ = " + this.state.civ);
+				
+				if(this.personalizeSayed == 1){
+					msg = msg + ". you playing with Civilization " + this.state.civ + " .";
+					warn('5585:' + msg);
+					if(this.state.civ == "mace"){
+						this.personalize.push(" Spearman-Cavalry from phase 1.");
+						this.personalize.push(" Javelineers-Infrantry (range of 30meters) from phase 1.");
+					}else
+					if(this.state.civ == "sele" || this.state.civ == "gaul" || this.state.civ == "iber" || this.state.civ == "spart"){
+						this.personalize.push(" Javelineers-Cavalry from phase 1(range of 30meters).");
+						this.personalize.push(" Javelineers-Infrantry (range of 30meters) from phase 1.");
+					}else
+					if(this.state.civ == "pers" || this.state.civ == "cart" || this.state.civ == "kush" || this.state.civ == "maur"){
+						this.personalize.push(" Javelineers-Cavalry from phase 1(range of 30meters).");
+						this.personalize.push(" Archer-Infrantry (range of 60meters) from phase 1.");
+						if(this.state.civ == "pers")
+							this.personalize.push(" in Phase 2 has also Axeman-, Spearman- and Archer-Cavalry.");
+						else if(this.state.civ == "cart")
+							this.personalize.push(" update Colonization for 25% less resouce const and fast build time. (costs 250metal, 250wood))");
+						else if(this.state.civ == "kush"){
+							this.personalize.push(" update Mon-Architecture for 20% health/captureTime(costs 300stone)");
+						}
+						else if(this.state.civ == "maur"){
+							this.personalize.push(" Worker Elefant cost 100food. (only available in Civilization " + this.state.civ + ")");
+						}
+						else if(this.state.civ == "spart")
+							this.personalize.push("update Hop-Tradition for 25% training and experiance(costs 300metal, 400food)");
+					}else
+					if(this.state.civ == "athen" || this.state.civ == "brit"){
+						this.personalize.push(" Javelineers-Cavalry from phase 1(range of 30meters, speed of 16).");
+						this.personalize.push(" Slinger-Infrantry (range of 45meters) from phase 1.");
+					}else
+					if(this.state.civ == "han" ){
+						this.personalize.push(" Swordsman-Cavalry from phase 1.");
+						this.personalize.push(" Archer-Infrantry (with only a range of 45meters, not 60meters) from phase 1.");
+					}else
+					if(this.state.civ == "ptol" ){
+						this.personalize.push(" Archer-Cavalry from phase 1(range of 60meters, Camels only have a speed of 15).");
+						this.personalize.push(" Slinger-Infrantry (range of 45meters, not 60meters) from phase 1.");
+					}
+
+					// 14 civs
+					// House-Build-Time 10
+					if(this.state.civ == "maur"
+					|| this.state.civ == "ptol"
+					|| this.state.civ == "iber"
+						){
+						this.personalize.push(" House-Build-Time is 30. Space for 3 people. 30/3 is 10");
+					}else
+					// House-Build-Time 8,3
+					if(this.state.civ == "athen"
+					|| this.state.civ == "cart"
+					|| this.state.civ == "han"
+					|| this.state.civ == "kush"
+					|| this.state.civ == "mace"
+					|| this.state.civ == "pers"
+					|| this.state.civ == "sele"
+					|| this.state.civ == "spart"
+					|| this.state.civ == "rome"
+					){
+						this.personalize.push( this.personalizeSayed + ": House-Build-Time is 50. Space for 6 people. 50/6 is a nomal 8,3 speed.");
+					}
+					// House-Build-Time 8
+					else if(this.state.civ == "brit" 
+						|| this.state.civ == "gaul"
+						)
+						this.personalize.push(" House-Build-Time is 24. Space for 3 people. 24/3 is 8");
+
+				}
+
+				ttsPL(msg + " ");
+				// warn('5585:' + msg);
+				this.personalize_atPopCount = this.statPopCount;
+				this.personalizeSayed++;
+
+				// this.personalize_atPopCount = this.statPopCount;
+				// war
+			}
 
 			if(this.itsMe == true
 				 && this.hotKeyExplainedTipsList.length > 0
@@ -559,7 +662,7 @@ class BoonGUIStatsTopPanelRow
 				// warn('535:' + this.hotKeyExplained);
 			}
 
-			if( this.itsMe !== true && this.voiceInfosExtra.popMax == 0 && Engine.ConfigDB_GetValue("user", "boongui.itsWorldCup") == "true"){
+			if( this.itsMe !== true && this.voiceInfosExtra.popMax == 0 && Engine.ConfigDB_GetValue("user", "AudioTTS.itsWorldCup") == "true"){
 				this.voiceInfosExtra.popMax = 1 // ++
 
 				// Engine.PlayUISound("audio/0ADworldCupSeptember2022/geralt_0_0.ogg", true);
@@ -636,7 +739,7 @@ class BoonGUIStatsTopPanelRow
 
 			}
 
-		// Engine.ConfigDB_GetValue("user", "boongui.yawningHearAllPlayers")
+		// Engine.ConfigDB_GetValue("user", "AudioTTS.yawningHearAllPlayers")
 		let t = new Date();
 		const waitedTime = t - this.lastYawningTime;
 		let idleCount = this.idleWorkerCount.caption.match(/.*\](\d+)\[/)[1];
@@ -646,26 +749,26 @@ class BoonGUIStatsTopPanelRow
 		// playerNickShort is empty if observer-mode and nobody selected? ???
 		else if (true
 			// && playerNickShort
-			&& (this.itsMe || Engine.ConfigDB_GetValue("user", "boongui.yawningHearAllPlayers") === "hearAll") // needet as observer we dont want hear the sound of each players together.
+			&& (this.itsMe || Engine.ConfigDB_GetValue("user", "AudioTTS.yawningHearAllPlayers") === "hearAll") // needet as observer we dont want hear the sound of each players together.
 
 			// && !g_IsObserver // i guess it also nice feature as observer to hear it maybe
 			&& this.yawningIdle
 			&& this.gameStartTime < t.setSeconds(t.getSeconds() - 5)
-			&& this.statPopCount < parseInt(Engine.ConfigDB_GetValue("user", "boongui.yawningIdlePopMax"))
-			&& waitedTime * Math.min(idleCount, 5) > 1000 * parseInt(Engine.ConfigDB_GetValue("user", "boongui.yawningPauseMiliSeconds"))) {
+			&& this.statPopCount < parseInt(Engine.ConfigDB_GetValue("user", "AudioTTS.yawningIdlePopMax"))
+			&& waitedTime * Math.min(idleCount, 5) > 1000 * parseInt(Engine.ConfigDB_GetValue("user", "AudioTTS.yawningPauseMiliSeconds"))) {
 
 
 
 			if (this.idleWorkerCount_prev != idleCount) {
 
 				this.firstYawningTime = t.setSeconds(t.getSeconds());
-				this.stopYawningTime = t.setSeconds(t.getSeconds() + parseInt(Engine.ConfigDB_GetValue("user", "boongui.yawningDuration")));
+				this.stopYawningTime = t.setSeconds(t.getSeconds() + parseInt(Engine.ConfigDB_GetValue("user", "AudioTTS.yawningDuration")));
 				this.idleWorkerCount_prev = idleCount;
 
 				this.yawningIdleCount++;
 
 				// playerNickShort is empty if observer-mode and nobody selected? 
-				if (playerNickShort && Engine.ConfigDB_GetValue("user", "boongui.yawningShowInterruptionsByIdle") === "showAllCount"){
+				if (playerNickShort && Engine.ConfigDB_GetValue("user", "AudioTTS.yawningShowInterruptionsByIdle") === "showAllCount"){
 					error("interruptions by Idle's:" + playerNickShort + "=" + this.yawningIdleCount);
 				}
 					
@@ -679,7 +782,7 @@ class BoonGUIStatsTopPanelRow
 			if (t < this.stopYawningTime) {
 
 
-				let yawningAudioFile = Engine.ConfigDB_GetValue("user", "boongui.yawningAudioFile");
+				let yawningAudioFile = Engine.ConfigDB_GetValue("user", "AudioTTS.yawningAudioFile");
 				if (this.itsMe || yawningAudioFile == "TTS"){
 					if(idleCount == 1)
 						// Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.speak", idleCount + " is waiting", "config/user.cfg");
@@ -709,7 +812,7 @@ class BoonGUIStatsTopPanelRow
 				}
 				this.lastYawningTime = Date.now();
 			} else {
-				let yawningAgainMuchLater = Engine.ConfigDB_GetValue("user", "boongui.yawningAgainMuchLater");
+				let yawningAgainMuchLater = Engine.ConfigDB_GetValue("user", "AudioTTS.yawningAgainMuchLater");
 				if (t.setSeconds(t.getSeconds() + yawningAgainMuchLater) < this.stopYawningTime) {
 					this.idleWorkerCount_prev = idleCount;
 				}
@@ -725,7 +828,7 @@ BoonGUIStatsTopPanelRow.prototype.civInfo = {
 	"page": "page_structree.xml"
 };
 
-if(parseInt(Engine.ConfigDB_GetValue("user", "boongui.yawningIdlePopMax")) > 0)
+if(parseInt(Engine.ConfigDB_GetValue("user", "AudioTTS.yawningIdlePopMax")) > 0)
 	BoonGUIStatsTopPanelRow.prototype.idleUnitsTooltip = markForTranslation("switch on or of yawning sound. Use Hotkey to Cycle through idle workers of the viewed player.\n" + colorizeHotkey("%(hotkey)s" + " ", "selection.idleworker"));
 else
 	BoonGUIStatsTopPanelRow.prototype.idleUnitsTooltip = markForTranslation("Cycle through idle workers of the viewed player.\n" + colorizeHotkey("%(hotkey)s" + " ", "selection.idleworker"));
