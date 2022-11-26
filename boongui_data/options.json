@@ -229,6 +229,13 @@
 				"config": "AudioTTS.yawningHearAsObserver"
 			},
 
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]yawning: Hear as observer (not implemented)[/color]",
+				"tooltip": "Hear all also as observer (not recomandet)",
+				"config": "AudioTTS.yawningHearAsObserver"
+			},
+
 
 			{
 				"type": "dropdown",
@@ -269,6 +276,12 @@
 				"label": "[color=\"220 185 70\"]tips[/color]TTS- explain easiest hotkey-config for beginners (seeh-hotKeys-config) (EXPERIMENTAL)",
 				"tooltip": "explain hotKeys configuration from seeh by AudioTTS",
 				"config": "AudioTTS.hotKeyExplained"
+			},
+			{
+				"type": "string",
+				"label": "[color=\"220 185 70\"]TTS for this Playerper also[/color]",
+				"tooltip": "[color=\"255 0 0\"][/color]",
+				"config": "AudioTTS_onlyForThisPlayerAlias"
 			},
 			{
 				"type": "string",

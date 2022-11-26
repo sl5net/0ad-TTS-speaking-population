@@ -21,6 +21,7 @@ class BoonGUIStatsTopPanel {
 		this.itsMe;
 		this.playername_multiplayer = Engine.ConfigDB_GetValue("user", "playername.multiplayer");
 		this.playername_singleplayer = Engine.ConfigDB_GetValue("user", "playername.singleplayer");
+		this.AudioTTS_onlyForThisPlayerAlias = Engine.ConfigDB_GetValue("user", "AudioTTS_onlyForThisPlayerAlias");
 
 	}
 
@@ -43,7 +44,13 @@ class BoonGUIStatsTopPanel {
 
 
 		// tells only if i playing in the game. false if i observer. always in row 1
-		this.itsMe = (playersStates[0].name == this.playername_multiplayer || playersStates[0].name == this.playername_singleplayer);
+		this.itsMe = (playersStates[0].name == this.playername_multiplayer 
+			|| playersStates[0].name == this.playername_singleplayer);
+
+		this.itsTTSPlayerAlias = (
+			  playersStates[0].name == this.AudioTTS_onlyForThisPlayerAlias
+		   || playersStates[0].name == this.AudioTTS_onlyForThisPlayerAlias
+		);
 
 
 

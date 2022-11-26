@@ -20,6 +20,15 @@ class BoonGUIStatsTopPanelRow
 			"Press F twice to build a farmstead. For more ask for the seeh-hotkey-config.",
 			""
 			];
+		this.hotKeyDificultToRememberList = [ 
+			"Press Super+W to disable Autotrain.",
+			"Press Shift+F to follow Units.",
+			"Press F5 to jumpt to camera 1.",
+			"Press Alt+H to select Healers",
+			"Press J to select wounded only",
+			"Press K to select no wounded only",
+			""
+			];
 
 		this.personalizeArryListSayed = 0;
 		this.personalizeArryList = []; // first elemente empty so the TTY start bit later
@@ -43,13 +52,15 @@ class BoonGUIStatsTopPanelRow
 			, "When you reach P3, build siege workshop immediately and produce rams from it."
 			, "Elephant civs can use elephants instead."
 			, "Also get hero trained."
-			, "Masbe use formations to keep them together. Close and Box are the most common ones."
+			, "If attack maysbe use formations to keep them together. Close and Box are the most common ones."
 		]
 
 		this.personalizeArryList = this.personalizeArryList.concat( this.tipsFromKatePDF);
 
-		if(Engine.ConfigDB_GetValue("user", "boongui.hotKeyExplained") == "true")
+		if(Engine.ConfigDB_GetValue("user", "boongui.hotKeyExplained") == "true"){
 			this.personalizeArryList = this.personalizeArryList.concat( this.hotKeyExplainedTipsList);
+			this.personalizeArryList = this.personalizeArryList.concat( this.hotKeyDificultToRememberList);
+		}
 
 		this.root = Engine.GetGUIObjectByName(PREFIX);
 		this.root.size = BoonGUIGetRowSize(index, 26);
@@ -109,6 +120,7 @@ class BoonGUIStatsTopPanelRow
 		this.itsMe;
 		this.playername_multiplayer = Engine.ConfigDB_GetValue("user", "playername.multiplayer");
 		this.playername_singleplayer = Engine.ConfigDB_GetValue("user", "playername.singleplayer");
+		this.AudioTTS_onlyForThisPlayerAlias = Engine.ConfigDB_GetValue("user", "AudioTTS_onlyForThisPlayerAlias");
 
 		// ANCHOR Engine.ConfigDB_GetValue
 		if( parseInt(Engine.ConfigDB_GetValue("user", "AudioTTS.yawningIdlePopMax")) > 0)
@@ -517,13 +529,31 @@ class BoonGUIStatsTopPanelRow
 			 }
 		// if(!playerNickShort) return;
 		// if(Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true")
-		this.itsMe = (playerNickShort == this.playername_multiplayer || playerNickShort == this.playername_singleplayer);
+		this.itsMe = (
+			playerNickShort == this.playername_multiplayer 
+			|| playerNickShort == this.playername_singleplayer);
+
+		this.itsTTSPlayerAlias = (
+			playerNickShort == this.AudioTTS_onlyForThisPlayerAlias
+			|| playerNickShort == this.AudioTTS_onlyForThisPlayerAlias
+		);
+
+		if(this.itsTTSPlayerAlias)
+			this.itsMe = true; // ugly quickFix
+
+  
+	if(this.itsTTSPlayerAlias)
+		this.itsMe = true; // ugly quickFix
+
 		// warn("mp=" + this.playername_singleplayer) // its for me x often if i play local.
 		// ANCHOR - idk how to find out if i ovserver or not.
 
 			 // AudioTTS.yawningHearAsObserver
 
 		itsMeGlobal = this.itsMe;
+		if(this.itsTTSPlayerAlias)
+			itsMeGlobal = true; // ugly quickFix
+
 
 		// warn("this.itsMe=" + this.itsMe)
 		// warn("playerNickShort=" + playerNickShort)
