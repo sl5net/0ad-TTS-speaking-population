@@ -43,14 +43,16 @@ class BoonGUIStatsTopPanelRow
 		this.personalize = [
 			""
 			, "Send the 4 women to gather berries."
-			, "Send 4 men to gather wood. If there is wood near your CC then collect those first, otherwise, build a storehouse near a large woodline."
+			, "Send 4 men to gather wood. Eventually build a storehouse near a large woodline."
 			, "Send the cavalry to hunt chickens."
 			, "When women have been trained, send them to build a farmstead near the berries and queue up 3 more."
 			, "Make sure some farms have been constructed and in operation before you run out of berries."
-			, "As soon as you reach town phase (phase 2), send the newly trained units to build 2 blacksmiths and 1 market."
+			, "As soon as you reach town phase (phase 2), build 2 blacksmiths and 1 market."
 			, "Once the 2 blacksmiths and 1 market have been constructed, click up to P3."
 			, "In total, you may should have about 7 infantry barracks. Cavalry stables maybe. "
-			, "When you reach P3, build siege workshop immediately and produce rams from it. Elephant civs can use elephants instead. Also get hero trained."
+			, "When you reach P3, build siege workshop immediately and produce rams from it."
+			, "Elephant civs can use elephants instead."
+			, "Also get hero trained."
 			, "Masbe use formations to keep them together. Close and Box are the most common ones."
 		]
 
@@ -99,8 +101,7 @@ class BoonGUIStatsTopPanelRow
 		this.gameStartTime = new Date();
 
 		this.voiceInfosExtra = { 
-			"popMax" : 0,
-			"pubdate" : "15.8.2005"
+			"popMax" : 1,
 		}
 
 		this.sgMapName = Engine.GetGUIObjectByName("sgMapName"); // dont work
@@ -539,12 +540,17 @@ class BoonGUIStatsTopPanelRow
 		
 		// warn(JSON.stringify(this.itsMe));
 
-			if(this.itsMe && this.voiceInfosExtra.popMax == 1
+			if(this.itsMe 
+				&& this.voiceInfosExtra.popMax >= 1
+				&& this.voiceInfosExtra.popMax < 10
 				&& this.statPopCount + 50 > this.state.popMax) // this.itsMe && 
 			{
+				const diff =  this.state.popMax - this.statPopCount ;
+				const msg = "only " + diff + " to popMax = " + this.state.popMax;
 				this.voiceInfosExtra.popMax++;
-				error("!! popMax = " + this.state.popMax);
-				warn("!! popMax = " + this.state.popMax + " maybe stop training.");
+				// error("!! popMax = " + this.state.popMax);
+				// warn("!! popMax = " + this.state.popMax + " maybe stop training.");
+				ttsPL(msg);
 			}
 
 			this.popLimitInt = this.popLimit.caption.match(/.*\](\d+)\[/)[1];
