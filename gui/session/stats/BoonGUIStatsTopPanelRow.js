@@ -32,6 +32,7 @@ class BoonGUIStatsTopPanelRow
 			];
 		}
 
+		// ty for https://wildfiregames.com/forum/topic/64941-0ad-guide-from-nub-to-op/?do=findComment&comment=470369
 		this.tipsFromKatePDF = [
 			""
 			, "Send the 4 women to gather berries."
