@@ -166,6 +166,9 @@ class BoonGUIStatsTopPanel {
 		this.rows.forEach((row, i) => row.update(playersStates[i], this.scales));
 	}
 }
+
+
+
 function AudioTTSsetGlobalVariables() {
 	if (Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation_ONOFF_textAndAudio") == "true") {
 		AudioTTS.noAudioOnlyTextTipsFromPopulation = Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyTextTipsFromPopulation");

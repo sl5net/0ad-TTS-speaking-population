@@ -10,6 +10,9 @@ class BoonGUIStatsTopPanelRow
 		const PREFIX = row.name;
 
 
+		AudioTTSsetGlobalVariables();
+		warn(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation_ONOFF_textAndAudio"));
+
 		this.hotKeyExplainedTipsList = [ 
 			"Beginners can't remember the hotkeys?",
 			"build Building: Press the first Letter of a Building-Name (or press several times for toggling Buildings).",
@@ -556,6 +559,7 @@ class BoonGUIStatsTopPanelRow
 		// warn(JSON.stringify(this.itsMe));
 
 			if(this.itsMe 
+				&& AudioTTS.tips_personalizeArryList_OnOFF
 				&& this.voiceInfosExtra.popMax >= 1
 				&& this.voiceInfosExtra.popMax < 7
 				&& this.statPopCount + 50 > this.state.popMax) // this.itsMe && 
@@ -580,6 +584,7 @@ class BoonGUIStatsTopPanelRow
 			}
 
 			if(this.itsMe 
+				&& AudioTTS.tips_personalizeArryList_OnOFF
 				&& this.popLimitIntOLD != this.popLimitInt
 				&& this.statPopCount + 20 > this.popLimitInt  
 				&& this.statPopCount - 40 < this.popLimitInt  
@@ -595,6 +600,7 @@ class BoonGUIStatsTopPanelRow
 
 
 			if(this.itsMe == true
+				&& AudioTTS.tips_personalizeArryList_OnOFF
 				&& this.personalizeArryList.length > 0
 				&& this.personalizeArryList_atPopCount != this.statPopCount){
 				let msg = this.personalizeArryList.shift();
