@@ -618,9 +618,10 @@ class BoonGUIStatsTopPanelRow
 					if(this.state.civ == "pers" || this.state.civ == "cart" || this.state.civ == "kush" || this.state.civ == "maur"){
 						this.personalizeArryList.push(" Javelineers-Cavalry from phase 1(range of 30meters).");
 						this.personalizeArryList.push(" Archer-Infrantry (range of 60meters) from phase 1.");
-						if(this.state.civ == "pers")
+						if(this.state.civ == "pers"){
 							this.personalizeArryList.push(" in Phase 2 has also Axeman-, Spearman- and Archer-Cavalry.");
-						else if(this.state.civ == "cart")
+							this.personalizeArryList.push(" upgrades trickle of resources for the amount of Territory they currently control.");
+						}else if(this.state.civ == "cart")
 							this.personalizeArryList.push(" update Colonization for 25% less resouce const and fast build time. (costs 250metal, 250wood))");
 						else if(this.state.civ == "kush"){
 							this.personalizeArryList.push(" update Mon-Architecture for 20% health/captureTime(costs 300stone)");
@@ -811,7 +812,8 @@ class BoonGUIStatsTopPanelRow
 				// txt += sprintf(this.GameStartFormat, this.gameStartArgs);
 			}
 
-			if (t < this.stopYawningTime) {
+			if (
+				AudioTTS.yawningIdle_OnOFF && t < this.stopYawningTime) {
 
 
 				let yawningAudioFile = Engine.ConfigDB_GetValue("user", "AudioTTS.yawningAudioFile");

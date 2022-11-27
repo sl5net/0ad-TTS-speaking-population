@@ -142,12 +142,19 @@
 			}
 		]
 	},
+
 	{
 		"label": "TTS-Speaking",
 		"options": [
-			{
+					{
+						"type": "boolean",
+						"label": "[color=\"220 185 70\"]yawning idle[/color]",
+						"tooltip": "",
+						"config": "AudioTTS.yawningIdle_OnOFF"
+					},
+					{
 				"type": "dropdown",
-				"label": "[color=\"220 185 70\"]yawning idle[/color] from the start time of a game.",
+				"label": "   [color=\"220 185 70\"]yawning idle[/color] from the start time of a game.",
 				"tooltip": "if used, the idle button can NOT be used anymore to find people who are idling. \n\nThe Button then is for toggle the yawning sound, throughout the total playing time.\n\n the hotkeys to find idles, of course, still working.\n\nchange only has an effect from the next game",
 				"config": "AudioTTS.yawningIdlePopMax",
 				"list": [
@@ -160,7 +167,7 @@
 			},
 			{
 				"type": "dropdown",
-				"label": "[color=\"220 185 70\"]yawning idle[/color] frequency.",
+				"label": "   [color=\"220 185 70\"]yawning idle[/color] frequency.",
 				"tooltip": "pause in seconds beetween in seconds",
 				"config": "AudioTTS.yawningPauseMiliSeconds",
 				"list": [
@@ -173,7 +180,7 @@
 			},
 			{
 				"type": "dropdown",
-				"label": "[color=\"220 185 70\"]yawning idle[/color] duration.",
+				"label": "   [color=\"220 185 70\"]yawning idle[/color] duration.",
 				"tooltip": "how long your idle shoud yawning",
 				"config": "AudioTTS.yawningDuration",
 				"list": [
@@ -185,7 +192,7 @@
 			},
 			{
 				"type": "dropdown",
-				"label": "[color=\"220 185 70\"]EXPERIMENTAL: yawning idle rememer again[/color] rememer you much later again.",
+				"label": "   [color=\"220 185 70\"]EXPERIMENTAL: yawning idle rememer again[/color] rememer you much later again.",
 				"tooltip": "if your idle stay very long, you have maybe forgot them, they could star yawning again",
 				"config": "AudioTTS.yawningAginMuchLater",
 				"list": [
@@ -196,7 +203,7 @@
 			},
 			{
 				"type": "dropdown",
-				"label": "[color=\"220 185 70\"]yawning Sound[/color]",
+				"label": "   [color=\"220 185 70\"]yawning Sound[/color]",
 				"tooltip": "yawning Audio File",
 				"config": "AudioTTS.yawningAudioFile",
 				"list": [
@@ -213,7 +220,7 @@
 			},
 			{
 				"type": "dropdown",
-				"label": "[color=\"220 185 70\"]yawning: Hear all Players[/color]",
+				"label": "   [color=\"220 185 70\"]yawning: Hear all Players[/color]",
 				"tooltip": "as an observer hear all players speak at the same time",
 				"config": "AudioTTS.yawningHearAllPlayers",
 				"list": [
@@ -223,7 +230,7 @@
 			},
 			{
 				"type": "dropdown",
-				"label": "[color=\"220 185 70\"]yawning count[/color]: and show all interruptions by Idle(EXPERIMENTAL)",
+				"label": "   [color=\"220 185 70\"]yawning count[/color]: and show all interruptions by Idle(EXPERIMENTAL)",
 				"tooltip": "count and show all interruptions by Idle EXPERIMENTAL shows as error message",
 				"config": "AudioTTS.yawningShowInterruptionsByIdle",
 				"list": [
@@ -251,7 +258,12 @@
 				"tooltip": "population gives you tips (Speech to you)  ",
 				"config": "AudioTTS.tipsFromPopulation"
 			},
-
+			{
+				"type": "boolean",
+				"label": "   [color=\"220 185 70\"]tips TTS:[/color] from large Text-List for Beginners",
+				"tooltip": "population gives you tips (Speech to you)  ",
+				"config": "AudioTTS.tips_personalizeArryList_OnOFF"
+			},
 
 
 			{

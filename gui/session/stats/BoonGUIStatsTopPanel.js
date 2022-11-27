@@ -22,8 +22,8 @@ class BoonGUIStatsTopPanel {
 		this.itsMe;
 		this.playername_multiplayer = Engine.ConfigDB_GetValue("user", "playername.multiplayer");
 		this.playername_singleplayer = Engine.ConfigDB_GetValue("user", "playername.singleplayer");
-		AudioTTS.onlyForThisPlayerAlias = Engine.ConfigDB_GetValue("user", "AudioTTS_onlyForThisPlayerAlias");
 
+		
 	}
 
 	update(playersStates) {
@@ -43,13 +43,7 @@ class BoonGUIStatsTopPanel {
 		// warn(JSON.stringify(this.playername_singleplayer));
 
 		
-		if(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation_ONOFF_textAndAudio") == "true"){
-			AudioTTS.noAudioOnlyTextTipsFromPopulation = Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyTextTipsFromPopulation");
-			AudioTTS.tipsFromPopulation = Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation");
-		}{
-			AudioTTS.noAudioOnlyTextTipsFromPopulation = false;
-			AudioTTS.tipsFromPopulation = false;
-		}
+		AudioTTSsetGlobalVariables();
 
 
 		
@@ -172,6 +166,25 @@ class BoonGUIStatsTopPanel {
 		this.rows.forEach((row, i) => row.update(playersStates[i], this.scales));
 	}
 }
+function AudioTTSsetGlobalVariables() {
+	if (Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation_ONOFF_textAndAudio") == "true") {
+		AudioTTS.noAudioOnlyTextTipsFromPopulation = Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyTextTipsFromPopulation");
+		AudioTTS.tipsFromPopulation = Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation");
+		AudioTTS.tips_personalizeArryList_OnOFF = Engine.ConfigDB_GetValue("user", "AudioTTS.tips_personalizeArryList_OnOFF");
+	} {
+		AudioTTS.noAudioOnlyTextTipsFromPopulation = false;
+		AudioTTS.tipsFromPopulation = false;
+	}
+
+
+	if (Engine.ConfigDB_GetValue("user", "AudioTTS.yawningIdle_OnOFF") == "true") {
+		AudioTTS.yawningIdle_OnOFF = Engine.ConfigDB_GetValue("user", "AudioTTS.yawningIdle_OnOFF");
+	} {
+		AudioTTS.yawningIdle_OnOFF = false;
+	}
+
+}
+
 function ttsPL(msg){
 	const date = new Date();
 	const msgWithoutNumber = msg.replace(/\d+/g,''); // it often good enough to remember only if the type change. 
