@@ -57,7 +57,7 @@ class BoonGUIStatsTopPanelRow
 
 		this.personalizeArryList = this.personalizeArryList.concat( this.tipsFromKatePDF);
 
-		if(Engine.ConfigDB_GetValue("user", "boongui.hotKeyExplained") == "true"){
+		if(Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyText_hotKeyExplained") == "true"){
 			this.personalizeArryList = this.personalizeArryList.concat( this.hotKeyExplainedTipsList);
 			this.personalizeArryList = this.personalizeArryList.concat( this.hotKeyDificultToRememberList);
 		}
@@ -120,7 +120,7 @@ class BoonGUIStatsTopPanelRow
 		this.itsMe;
 		this.playername_multiplayer = Engine.ConfigDB_GetValue("user", "playername.multiplayer");
 		this.playername_singleplayer = Engine.ConfigDB_GetValue("user", "playername.singleplayer");
-		this.AudioTTS_onlyForThisPlayerAlias = Engine.ConfigDB_GetValue("user", "AudioTTS_onlyForThisPlayerAlias");
+		AudioTTS.onlyForThisPlayerAlias = Engine.ConfigDB_GetValue("user", "AudioTTS_onlyForThisPlayerAlias");
 
 		// ANCHOR Engine.ConfigDB_GetValue
 		if( parseInt(Engine.ConfigDB_GetValue("user", "AudioTTS.yawningIdlePopMax")) > 0)
@@ -527,15 +527,13 @@ class BoonGUIStatsTopPanelRow
 			} catch (error) {
 				return
 			 }
-		// if(!playerNickShort) return;
-		// if(Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true")
 		this.itsMe = (
 			playerNickShort == this.playername_multiplayer 
 			|| playerNickShort == this.playername_singleplayer);
 
 		this.itsTTSPlayerAlias = (
-			playerNickShort == this.AudioTTS_onlyForThisPlayerAlias
-			|| playerNickShort == this.AudioTTS_onlyForThisPlayerAlias
+			playerNickShort == AudioTTS.onlyForThisPlayerAlias
+			|| playerNickShort == AudioTTS.onlyForThisPlayerAlias
 		);
 
 		if(this.itsTTSPlayerAlias)
@@ -547,9 +545,6 @@ class BoonGUIStatsTopPanelRow
 
 		// warn("mp=" + this.playername_singleplayer) // its for me x often if i play local.
 		// ANCHOR - idk how to find out if i ovserver or not.
-
-			 // AudioTTS.yawningHearAsObserver
-
 		itsMeGlobal = this.itsMe;
 		if(this.itsTTSPlayerAlias)
 			itsMeGlobal = true; // ugly quickFix
@@ -577,7 +572,7 @@ class BoonGUIStatsTopPanelRow
 			if(this.itsMe && this.statPopCount + 5 > this.popLimitInt 
 				&& this.popLimitIntOLD != this.popLimitInt ){
 				const msg = "We nearly housed. build more housese";
-				if(Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true")
+				if(Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyTextTipsFromPopulation") == "true")
 					error(msg);
 				if(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation") == "true")
 					ttsPL(msg);
@@ -591,7 +586,7 @@ class BoonGUIStatsTopPanelRow
 				){
 				let diffToMax = this.popLimitInt - this.statPopCount;
 				const msg = diffToMax + "to pop Limit.";
-				if(Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true")
+				if(Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyTextTipsFromPopulation") == "true")
 					error(msg);
 				if(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation") == "true")
 					ttsPL(msg);
@@ -690,7 +685,7 @@ class BoonGUIStatsTopPanelRow
 			if(this.itsMe == true
 				 && this.hotKeyExplainedTipsList.length > 0
 				 && this.hotKeyExplained_atPopCount != this.statPopCount
-				 && Engine.ConfigDB_GetValue("user", "boongui.hotKeyExplained") == "true"){
+				 && Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyText_hotKeyExplained") == "true"){
 				let msg = this.hotKeyExplainedTipsList.shift();
 				// Engine.ConfigDB_WriteValueToFile("user", "AudioTTS.speak", msg, "config/user.cfg");
 				ttsPL(msg);
@@ -728,7 +723,7 @@ class BoonGUIStatsTopPanelRow
 			}
 
 			if(this.itsMe && this.voiceInfosExtra.popMax == 0
-				&& Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true"){
+				&& Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyTextTipsFromPopulation") == "true"){
 				this.voiceInfosExtra.popMax++;
 				// tooltip += "Max" + g_Indent + g_Indent + normalizeValue(state.popMax);
 				// warn("pop = " + this.statPopCount);
@@ -748,7 +743,7 @@ class BoonGUIStatsTopPanelRow
 				// }
 
 
-				if(Engine.ConfigDB_GetValue("user", "boongui.tipsFromPopulation") == "true"){
+				if(Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyTextTipsFromPopulation") == "true"){
 
 					error('_____________________________________________________________________________');
 					warn('! be sure you\'re not only playing against Player2 !!!!! its not a player.');

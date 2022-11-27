@@ -1,4 +1,5 @@
 var AudioTTSspeak = new Map();
+var AudioTTS = {};
 
 class BoonGUIStatsTopPanel {
 
@@ -21,7 +22,7 @@ class BoonGUIStatsTopPanel {
 		this.itsMe;
 		this.playername_multiplayer = Engine.ConfigDB_GetValue("user", "playername.multiplayer");
 		this.playername_singleplayer = Engine.ConfigDB_GetValue("user", "playername.singleplayer");
-		this.AudioTTS_onlyForThisPlayerAlias = Engine.ConfigDB_GetValue("user", "AudioTTS_onlyForThisPlayerAlias");
+		AudioTTS.onlyForThisPlayerAlias = Engine.ConfigDB_GetValue("user", "AudioTTS_onlyForThisPlayerAlias");
 
 	}
 
@@ -41,19 +42,26 @@ class BoonGUIStatsTopPanel {
 		// warn(JSON.stringify(playersStates[0].name));
 		// warn(JSON.stringify(this.playername_singleplayer));
 
+		
+		if(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation_ONOFF_textAndAudio") == "true"){
+			AudioTTS.noAudioOnlyTextTipsFromPopulation = Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyTextTipsFromPopulation");
+			AudioTTS.tipsFromPopulation = Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation");
+		}{
+			AudioTTS.noAudioOnlyTextTipsFromPopulation = false;
+			AudioTTS.tipsFromPopulation = false;
+		}
 
+
+		
 
 		// tells only if i playing in the game. false if i observer. always in row 1
 		this.itsMe = (playersStates[0].name == this.playername_multiplayer 
 			|| playersStates[0].name == this.playername_singleplayer);
 
 		this.itsTTSPlayerAlias = (
-			  playersStates[0].name == this.AudioTTS_onlyForThisPlayerAlias
-		   || playersStates[0].name == this.AudioTTS_onlyForThisPlayerAlias
+			  playersStates[0].name == AudioTTS.onlyForThisPlayerAlias
+		   || playersStates[0].name == AudioTTS.onlyForThisPlayerAlias
 		);
-
-
-
 		// warn('this.itsMe = ' + this.itsMe);
 		// warn('itsMeGlobal = ' + itsMeGlobal); // always false
 		// warn(JSON.stringify(playersStates));
@@ -85,7 +93,7 @@ class BoonGUIStatsTopPanel {
 				// warn(JSON.stringify(state.index));
 
 				if((this.itsMe && state.index == 1) // host is always in first row  means index is 1 here. btw. as observer you maybe not host, so maybe not in first row. in single games you always in first row (if you playing)
-				&& Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation") == "true") {
+				&& AudioTTS.tipsFromPopulation ) {
 
 					// warn("state.popCount=" + state.popCount);
 

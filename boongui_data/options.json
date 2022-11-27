@@ -221,22 +221,6 @@
 					{ "value": "hearAll", "label": "Hear all Players" }
 				]
 			},
-
-			{
-				"type": "boolean",
-				"label": "[color=\"220 185 70\"]yawning: Hear as observer (not implemented)[/color]",
-				"tooltip": "Hear all also as observer (not recomandet)",
-				"config": "AudioTTS.yawningHearAsObserver"
-			},
-
-			{
-				"type": "boolean",
-				"label": "[color=\"220 185 70\"]yawning: Hear as observer (not implemented)[/color]",
-				"tooltip": "Hear all also as observer (not recomandet)",
-				"config": "AudioTTS.yawningHearAsObserver"
-			},
-
-
 			{
 				"type": "dropdown",
 				"label": "[color=\"220 185 70\"]yawning count[/color]: and show all interruptions by Idle(EXPERIMENTAL)",
@@ -247,36 +231,50 @@
 					{ "value": "showAllCount", "label": "show all" }
 				]
 			},
+
+
 			{
 				"type": "boolean",
-				"label": "[color=\"220 185 70\"]tips[/color] population gives you tips(EXPERIMENTAL)",
-				"tooltip": "population gives you tips (yellow waring messages  ",
-				"config": "boongui.tipsFromPopulation"
+				"label": "[color=\"220 185 70\"]tips population:[/color] population sends you Audo/Text/TTS",
+				"tooltip": "population gives you tips (notify or audio. if off later options will get off later also) ",
+				"config": "AudioTTS.tipsFromPopulation_ONOFF_textAndAudio"
 			},
 			{
 				"type": "boolean",
-				"label": "[color=\"220 185 70\"]TTS tips[/color] population Speech tips to you (EXPERIMENTAL)",
+				"label": "   [color=\"220 185 70\"]tips text:[/color] population gives sends you",
+				"tooltip": "population gives you tips (yellow or red notify messages) ",
+				"config": "AudioTTS.noAudioOnlyTextTipsFromPopulation"
+			},
+			{
+				"type": "boolean",
+				"label": "   [color=\"220 185 70\"]tips TTS:[/color] population Speech tips to you",
 				"tooltip": "population gives you tips (Speech to you)  ",
 				"config": "AudioTTS.tipsFromPopulation"
 			},
+
+
+
 			{
 				"type": "boolean",
-				"label": "[color=\"220 185 70\"]tips[/color]itsWorldCup(EXPERIMENTAL)",
-				"tooltip": "itsWorldCup welcome message and greeting voice",
-				"config": "AudioTTS.itsWorldCup"
+				"label": "[color=\"220 185 70\"]easiest hotkey-config:   [/color] explained per Audo/Text/TTS",
+				"tooltip": "population gives you tips (notify or audio. if off later options will get off later also) ",
+				"config": "AudioTTS.hotKeyExplained_ONOFF_textAndAudio"
 			},
 			{
 				"type": "boolean",
-				"label": "[color=\"220 185 70\"]tips[/color]explain easiest hotkey-config for beginners (seeh-hotKeys-config) (EXPERIMENTAL)",
-				"tooltip": "explain hotKeys configuration from seeh",
-				"config": "boongui.hotKeyExplained"
+				"label": "   [color=\"220 185 70\"]tips text:[/color] explain easiest hotkey-config for beginners",
+				"tooltip": "sends text messages (seeh-hotKeys-config)",
+				"config": "AudioTTS.noAudioOnlyText_hotKeyExplained"
 			},
 			{
 				"type": "boolean",
-				"label": "[color=\"220 185 70\"]tips[/color]TTS- explain easiest hotkey-config for beginners (seeh-hotKeys-config) (EXPERIMENTAL)",
-				"tooltip": "explain hotKeys configuration from seeh by AudioTTS",
+				"label": "   [color=\"220 185 70\"]tips TTL:[/color] explain easiest hotkey-config for beginners",
+				"tooltip": "TTS-Audo explains hotKeys configuration (seeh-hotKeys-config) by AudioTTS",
 				"config": "AudioTTS.hotKeyExplained"
 			},
+
+
+
 			{
 				"type": "string",
 				"label": "[color=\"220 185 70\"]TTS for this Playerper also[/color]",
@@ -288,6 +286,12 @@
 				"label": "[color=\"220 185 70\"]personalize[/color]: how you want be called?",
 				"tooltip": "[color=\"255 0 0\"]how you want be called?[/color]",
 				"config": "AudioTTS.wantBeCalled"
+			},
+			{
+				"type": "boolean",
+				"label": "[color=\"220 185 70\"]WorldCup Audio-TTL-Messages: [/color]itsWorldCup(EXPERIMENTAL)",
+				"tooltip": "itsWorldCup welcome message and greeting voice",
+				"config": "AudioTTS.itsWorldCup"
 			}
 
 
