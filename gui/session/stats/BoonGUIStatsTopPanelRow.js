@@ -11,7 +11,7 @@ class BoonGUIStatsTopPanelRow
 
 
 		AudioTTSsetGlobalVariables();
-		warn(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation_ONOFF_textAndAudio"));
+		// warn(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation_ONOFF_textAndAudio"));
 
 		this.hotKeyExplainedTipsList = [ 
 			"Beginners can't remember the hotkeys?",
