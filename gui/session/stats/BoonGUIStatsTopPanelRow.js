@@ -630,7 +630,7 @@ class BoonGUIStatsTopPanelRow
 				
 				// warn("han=" + civsToLongName['han']);
 
-				if(true || this.personalizeArryListSayed == 1){
+				if(this.personalizeArryListSayed == 1){
 					msg = msg + ". you playing with Civilization " + civsToLongName[this.state.civ] + " .";
 					// warn('5585:' + msg);
 					if(this.state.civ == "mace"){
