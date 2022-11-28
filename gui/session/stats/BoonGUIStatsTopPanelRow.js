@@ -590,7 +590,7 @@ class BoonGUIStatsTopPanelRow
 				&& this.statPopCount - 40 < this.popLimitInt  
 				){
 				let diffToMax = this.popLimitInt - this.statPopCount;
-				const msg = diffToMax + "to pop Limit.";
+				const msg = diffToMax + " to pop Limit.";
 				if(Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyTextTipsFromPopulation") == "true")
 					error(msg);
 				if(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation") == "true")
@@ -610,8 +610,28 @@ class BoonGUIStatsTopPanelRow
 				// warn("373: personalizeArryListSayed = " + this.personalizeArryListSayed);
 				// warn("373:this.state.civ = " + this.state.civ);
 				
-				if(this.personalizeArryListSayed == 1){
-					msg = msg + ". you playing with Civilization " + this.state.civ + " .";
+
+				const civsToLongName = {
+					"athen" : "Athenians",
+					"brit"  : "Britons",
+					"cart"  : "Carthaginians",
+					"spart" : "Spartans",
+					"gaul"  : "Gauls",
+					"iber"  : "Iberians",
+					"maur"  : "Mauryans",
+					"kush"  : "Kushites",
+					"mace"  : "Macedonians",
+					"pers"  : "Persians",
+					"ptol"  : "Ptolemies",
+					"rome"  : "Romans",
+					"sele"  : "Seleucids",
+					"han"	: "Han"
+				};
+				
+				// warn("han=" + civsToLongName['han']);
+
+				if(true || this.personalizeArryListSayed == 1){
+					msg = msg + ". you playing with Civilization " + civsToLongName[this.state.civ] + " .";
 					// warn('5585:' + msg);
 					if(this.state.civ == "mace"){
 						this.personalizeArryList.push(" Spearman-Cavalry from phase 1.");
