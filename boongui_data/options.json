@@ -299,13 +299,13 @@
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]set to intuitive[/color] AutoCiv-Profiles",
-				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "profile.autociv.intuitive"
 			},
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]Global:[/color] Reset all AutoCiv settings",
-				"tooltip": "Resets all AutoCiv (REQUIRES RESTART) (DOESN'T RESET CUSTOM AUTOCIV SETTINGS)",
+				"tooltip": "Resets all AutoCiv (REQUIRES RESTART) (DOESN'T RESET CUSTOM AUTOCIV SETTINGS)\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "autociv.settings.reset.all"
 			}
 		
@@ -317,62 +317,62 @@
 			{
 				"type": "string",
 				"label": "([color=\"255 0 0\"]mod.enabledmods[/color]): will be overwitten maybe from somewhere.",
-				"tooltip": "[color=\"255 0 0\"]will be overwitten\nbetter dont edit[/color].\nmods that you use at the moment",
+				"tooltip": "[color=\"255 0 0\"]will be overwitten\nbetter dont edit[/color].\nmods that you use at the moment\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "mod.enabledmods"
 			},
 			{
 				"type": "string",
 				"label": "p0 (please resart game when you change something here)",
-				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.p0"
 			},
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]use 0[/color] not recomandet do set many checkboxses",
-				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.p0enabled"
 			},
 			{
 				"type": "string",
 				"label": "p1 ('mod' and 'public' will be included later automatically.)",
-				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.p1"
 			},
 			{
 				"type": "boolean",
-				"label": "[color=\"220 185 70\"]use 1[/color]",
-				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
+				"label": "[color=\"220 185 70\"]use 1[/color]\n",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY\n more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.p1enabled"
 			},
 			{
 				"type": "string",
-				"label": "p2",
-				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"label": "p2\n [color=\"255 0 0\"]",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.p2"
 			},
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]use 2[/color]",
-				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.p2enabled"
 			},
 			{
 				"type": "string",
 				"label": "p3",
-				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.p3"
 			},
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]use 3[/color]",
-				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.p3enabled"
 			},
 
 			{
 				"type": "string",
 				"label": "p4",
-				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.p4"
 			},
 			{
@@ -384,19 +384,19 @@
 			{
 				"type": "string",
 				"label": "p5",
-				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).",
+				"tooltip": "all your mods that you want to enable (BTW see line mod.enabledmods in your user.cfg).\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.p5"
 			},
 			{
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]use 5[/color]",
-				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]",
+				"tooltip": "Set Hotkey-Profiles.\n[color=\"255 0 0\"]RESTART NECESSARY[/color]\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.p5enabled"
 			},
 			{
 				"type": "string",
 				"label": "([color=\"255 0 0\"]backup[/color]): will be overwitten\ndont edit. what you have used before",
-				"tooltip": "[color=\"255 0 0\"]will be overwitten\nbetter dont edit[/color]",
+				"tooltip": "[color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n [color=\"255 0 0\"]more Details at https://trac.wildfiregames.com/wiki/GameDataPaths for example: [/color]\n Path to user data: \n Linux     : ~/.config/0ad/user.cfg \n Windows: %AppData%\\0ad\\user.cfg \n macOS    : \/Users\/{YOUR USERNAME}\/Library\/Application\\ Support/0ad/user.cfg ",
 				"config": "modProfile.backup"
 			}
 		]
