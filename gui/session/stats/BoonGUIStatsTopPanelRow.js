@@ -663,7 +663,7 @@ class BoonGUIStatsTopPanelRow
 						this.personalizeArryList.push(" Slinger-Infrantry (range of 45meters) from phase 1.");
 					}else
 					if(this.state.civ == "han" ){
-						this.personalizeArryList.push(" Swordsman-Cavalry from phase 1.");
+						this.personalizeArryList.push(" fast Swordsman-Cavalry from phase 1 (speed 18).");
 						this.personalizeArryList.push(" Archer-Infrantry (with only a range of 45meters, not 60meters) from phase 1.");
 					}else
 					if(this.state.civ == "ptol" ){
