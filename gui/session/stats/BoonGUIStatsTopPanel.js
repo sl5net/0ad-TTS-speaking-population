@@ -100,7 +100,17 @@ class BoonGUIStatsTopPanel {
 				&& AudioTTS.tipsFromPopulation ) {
 
 
-					// const diffMin = Math.round( Math.abs((new Date()) - this.dateStart) / 1000 / 60 * 10) / 10;
+					const diffMin = Math.round( Math.abs((new Date()) - this.dateStart) / 1000 / 60 * 10) / 10;
+					if(diffMin == 9){
+						let msg = "Now many players have a population of 100. "
+						if(state.popCount > 90)
+							msg += "you're pretty fast."
+						else
+							msg += "Hope you have some swords vs Rams."
+						ttsPL(msg);
+						// warn('105: msg: ' + msg); // example 0.8
+						// warn('105: diffMin: ' + diffMin); // example 0.8
+					}
 					// warn('105: diffMin: ' + diffMin); // example 0.8
 			
 					// warn("state.popCount=" + state.popCount);
