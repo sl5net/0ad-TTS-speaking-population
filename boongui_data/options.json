@@ -150,7 +150,7 @@
 						"type": "boolean",
 						"label": "[color=\"220 185 70\"]yawning idle[/color]",
 						"tooltip": "",
-						"config": "AudioTTS.yawningIdle_OnOFF"
+						"config": "AudioTTS.yawningIdle_OnOff"
 					},
 					{
 				"type": "dropdown",
@@ -244,7 +244,7 @@
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]tips population:[/color] population sends you Audo/Text/TTS",
 				"tooltip": "population gives you tips (notify or audio. if off later options will get off later also) ",
-				"config": "AudioTTS.tipsFromPopulation_ONOFF_textAndAudio"
+				"config": "AudioTTS.tipsFromPopulation_OnOff_textAndAudio"
 			},
 			{
 				"type": "boolean",
@@ -262,7 +262,7 @@
 				"type": "boolean",
 				"label": "   [color=\"220 185 70\"]tips TTS:[/color] from large Text-List for Beginners",
 				"tooltip": "population gives you tips (Speech to you)  ",
-				"config": "AudioTTS.tips_personalizeArryList_OnOFF"
+				"config": "AudioTTS.tips_personalizeArryList_OnOff"
 			},
 
 
@@ -270,7 +270,7 @@
 				"type": "boolean",
 				"label": "[color=\"220 185 70\"]easiest hotkey-config:   [/color] explained per Audo/Text/TTS",
 				"tooltip": "population gives you tips (notify or audio. if off later options will get off later also) ",
-				"config": "AudioTTS.hotKeyExplained_ONOFF_textAndAudio"
+				"config": "AudioTTS.hotKeyExplained_OnOff_textAndAudio"
 			},
 			{
 				"type": "boolean",

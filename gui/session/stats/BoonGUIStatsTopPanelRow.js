@@ -11,7 +11,7 @@ class BoonGUIStatsTopPanelRow
 
 
 		AudioTTSsetGlobalVariables();
-		// warn(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation_ONOFF_textAndAudio"));
+		// warn(Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation_OnOff_textAndAudio"));
 
 		this.hotKeyExplainedTipsList = [ 
 			"Beginners can't remember the hotkeys?",
@@ -559,7 +559,7 @@ class BoonGUIStatsTopPanelRow
 		// warn(JSON.stringify(this.itsMe));
 
 			if(this.itsMe 
-				&& AudioTTS.tips_personalizeArryList_OnOFF
+				&& AudioTTS.tips_personalizeArryList_OnOff
 				&& this.voiceInfosExtra.popMax >= 1
 				&& this.voiceInfosExtra.popMax < 7
 				&& this.statPopCount + 50 > this.state.popMax) // this.itsMe && 
@@ -584,7 +584,7 @@ class BoonGUIStatsTopPanelRow
 			}
 
 			if(this.itsMe 
-				&& AudioTTS.tips_personalizeArryList_OnOFF
+				&& AudioTTS.tips_personalizeArryList_OnOff
 				&& this.popLimitIntOLD != this.popLimitInt
 				&& this.statPopCount + 20 > this.popLimitInt  
 				&& this.statPopCount - 40 < this.popLimitInt  
@@ -600,7 +600,7 @@ class BoonGUIStatsTopPanelRow
 
 
 			if(this.itsMe == true
-				&& AudioTTS.tips_personalizeArryList_OnOFF
+				&& AudioTTS.tips_personalizeArryList_OnOff
 				&& this.personalizeArryList.length > 0
 				&& this.personalizeArryList_atPopCount != this.statPopCount){
 				let msg = this.personalizeArryList.shift();
@@ -839,7 +839,7 @@ class BoonGUIStatsTopPanelRow
 			}
 
 			if (
-				AudioTTS.yawningIdle_OnOFF && t < this.stopYawningTime) {
+				AudioTTS.yawningIdle_OnOff && t < this.stopYawningTime) {
 
 
 				let yawningAudioFile = Engine.ConfigDB_GetValue("user", "AudioTTS.yawningAudioFile");

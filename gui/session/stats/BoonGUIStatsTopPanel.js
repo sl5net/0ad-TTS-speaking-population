@@ -5,9 +5,13 @@ class BoonGUIStatsTopPanel {
 
 	constructor() {
 		const date = new Date();
+		const PREFIX = "StatsTopPanel";
+
 		AudioTTSspeak.set('"lastSpeak"', date);	// fake time. works akso without. maybe at very first time no need to store message to config then
 
-		const PREFIX = "StatsTopPanel";
+		this.dateStart = date; // const diffSeconds = Math.abs((new Date()) - this.dateStart) / 1000;
+		// const diffMin = Math.round( Math.abs((new Date()) - this.dateStart) / 1000 / 60 * 10) / 10;
+
 		this.root = Engine.GetGUIObjectByName(PREFIX);
 		this.headerContainer = Engine.GetGUIObjectByName(`${PREFIX}Header`);
 		this.rowsContainer = Engine.GetGUIObjectByName(`${PREFIX}Rows`);
@@ -23,7 +27,9 @@ class BoonGUIStatsTopPanel {
 		this.playername_multiplayer = Engine.ConfigDB_GetValue("user", "playername.multiplayer");
 		this.playername_singleplayer = Engine.ConfigDB_GetValue("user", "playername.singleplayer");
 
-		
+
+		// AudioTTS.tipsFromPopulation
+
 	}
 
 	update(playersStates) {
@@ -41,6 +47,8 @@ class BoonGUIStatsTopPanel {
 		// 	 }
 		// warn(JSON.stringify(playersStates[0].name));
 		// warn(JSON.stringify(this.playername_singleplayer));
+
+
 
 		
 		AudioTTSsetGlobalVariables();
@@ -85,10 +93,16 @@ class BoonGUIStatsTopPanel {
 
 				// warn(JSON.stringify(state));
 				// warn(JSON.stringify(state.index));
+				// warn('96: AudioTTS.tipsFromPopulation =' + AudioTTS.tipsFromPopulation);
+				// warn('AudioTTS.tipsFromPopulation_OnOff_textAndAudio =' + AudioTTS.tipsFromPopulation_OnOff_textAndAudio);
 
 				if((this.itsMe && state.index == 1) // host is always in first row  means index is 1 here. btw. as observer you maybe not host, so maybe not in first row. in single games you always in first row (if you playing)
 				&& AudioTTS.tipsFromPopulation ) {
 
+
+					// const diffMin = Math.round( Math.abs((new Date()) - this.dateStart) / 1000 / 60 * 10) / 10;
+					// warn('105: diffMin: ' + diffMin); // example 0.8
+			
 					// warn("state.popCount=" + state.popCount);
 
 					if(state.popCount < 150){
@@ -169,21 +183,23 @@ class BoonGUIStatsTopPanel {
 
 
 
-function AudioTTSsetGlobalVariables() {
-	if (Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation_ONOFF_textAndAudio") == "true") {
+function AudioTTSsetGlobalVariables() { // AudioTTS.tipsFromPopulation_OnOff_textAndAudioudio
+	const asdfsdf = Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation_OnOff_textAndAudio");
+	if (asdfsdf == "true") {
 		AudioTTS.noAudioOnlyTextTipsFromPopulation = Engine.ConfigDB_GetValue("user", "AudioTTS.noAudioOnlyTextTipsFromPopulation");
 		AudioTTS.tipsFromPopulation = Engine.ConfigDB_GetValue("user", "AudioTTS.tipsFromPopulation");
-		AudioTTS.tips_personalizeArryList_OnOFF = Engine.ConfigDB_GetValue("user", "AudioTTS.tips_personalizeArryList_OnOFF");
-	} {
+		AudioTTS.tips_personalizeArryList_OnOff = Engine.ConfigDB_GetValue("user", "AudioTTS.tips_personalizeArryList_OnOff");
+	} else {
 		AudioTTS.noAudioOnlyTextTipsFromPopulation = false;
 		AudioTTS.tipsFromPopulation = false;
 	}
+	// warn('195: AudioTTS.tipsFromPopulation_OnOff_textAndAudio: ' + AudioTTS.tipsFromPopulation_OnOff_textAndAudio)
+	// warn('205: AudioTTS.tipsFromPopulation: ' + AudioTTS.tipsFromPopulation)
 
-
-	if (Engine.ConfigDB_GetValue("user", "AudioTTS.yawningIdle_OnOFF") == "true") {
-		AudioTTS.yawningIdle_OnOFF = Engine.ConfigDB_GetValue("user", "AudioTTS.yawningIdle_OnOFF");
+	if (Engine.ConfigDB_GetValue("user", "AudioTTS.yawningIdle_OnOff") == "true") {
+		AudioTTS.yawningIdle_OnOff = Engine.ConfigDB_GetValue("user", "AudioTTS.yawningIdle_OnOff");
 	} {
-		AudioTTS.yawningIdle_OnOFF = false;
+		AudioTTS.yawningIdle_OnOff = false;
 	}
 
 }
