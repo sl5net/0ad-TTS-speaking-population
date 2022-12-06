@@ -640,23 +640,27 @@ class BoonGUIStatsTopPanelRow
 					if(this.state.civ == "sele" || this.state.civ == "gaul" || this.state.civ == "iber" || this.state.civ == "spart"){
 						this.personalizeArryList.push(" Javelineers-Cavalry from phase 1(range of 30meters).");
 						this.personalizeArryList.push(" Javelineers-Infrantry (range of 30meters) from phase 1.");
+
+						if(this.state.civ == "spart")
+							this.personalizeArryList.push("update Hop-Tradition for 25% training and experience(costs 300metal, 400food)");
+
+
 					}else
-					if(this.state.civ == "pers" || this.state.civ == "cart" || this.state.civ == "kush" || this.state.civ == "maur"){
+					if(this.state.civ == "pers" || this.state.civ == "cart" || this.state.civ == "kush" 
+					|| this.state.civ == "maur"){
 						this.personalizeArryList.push(" Javelineers-Cavalry from phase 1(range of 30meters).");
 						this.personalizeArryList.push(" Archer-Infrantry (range of 60meters) from phase 1.");
 						if(this.state.civ == "pers"){
 							this.personalizeArryList.push(" in Phase 2 has also Axeman-, Spearman- and Archer-Cavalry.");
 							this.personalizeArryList.push(" upgrades trickle of resources for the amount of Territory they currently control.");
-						}else if(this.state.civ == "cart")
-							this.personalizeArryList.push(" update Colonization for 25% less resouce const and fast build time. (costs 250metal, 250wood))");
+						}else if(this.state.civ == "cart") 
+							this.personalizeArryList.push(" update Colonization for 25% less resource const and fast build time. (costs 250metal, 250wood))");
 						else if(this.state.civ == "kush"){
 							this.personalizeArryList.push(" update Mon-Architecture for 20% health/captureTime(costs 300stone)");
 						}
 						else if(this.state.civ == "maur"){
 							this.personalizeArryList.push(" Worker Elefant cost 100food. (only available in Civilization " + this.state.civ + ")");
 						}
-						else if(this.state.civ == "spart")
-							this.personalizeArryList.push("update Hop-Tradition for 25% training and experiance(costs 300metal, 400food)");
 					}else
 					if(this.state.civ == "athen" || this.state.civ == "brit"){
 						this.personalizeArryList.push(" Javelineers-Cavalry from phase 1(range of 30meters, speed of 16).");
@@ -668,7 +672,7 @@ class BoonGUIStatsTopPanelRow
 						this.personalizeArryList.push(" Archer-Infrantry (with only a range of 45meters, not 60meters) from phase 1.");
 					}else
 					if(this.state.civ == "ptol" ){
-						this.personalizeArryList.push(" Archer-Cavalry from phase 1(range of 60meters, Camels only have a speed of 15).");
+						this.personalizeArryList.push(" slow Archer-Cavalry from phase 1(range of 60meters, Camels only have a speed of 15).");
 						this.personalizeArryList.push(" Slinger-Infrantry (range of 45meters, not 60meters) from phase 1.");
 					}
 
