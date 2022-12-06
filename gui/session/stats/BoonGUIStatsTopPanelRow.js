@@ -661,6 +661,7 @@ class BoonGUIStatsTopPanelRow
 					if(this.state.civ == "athen" || this.state.civ == "brit"){
 						this.personalizeArryList.push(" Javelineers-Cavalry from phase 1(range of 30meters, speed of 16).");
 						this.personalizeArryList.push(" Slinger-Infrantry (range of 45meters) from phase 1.");
+						this.personalizeArryList.push(" from phase 2 stable: fast Swordsman-Cavalry (speed 18).");
 					}else
 					if(this.state.civ == "han" ){
 						this.personalizeArryList.push(" fast Swordsman-Cavalry from phase 1 (speed 18).");
