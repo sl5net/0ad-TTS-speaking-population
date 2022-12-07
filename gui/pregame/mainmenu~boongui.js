@@ -125,21 +125,22 @@ function saveThisModProfile(nr){
 	const modsFromUserCfg_const = Engine.ConfigDB_GetValue("user", "mod.enabledmods");
 	const name = "modProfile.p" + nr
 	const modProfile = Engine.ConfigDB_GetValue("user", name);
-	const nameLabel = "modProfile.p" + nr + ".label"
+	const nameLabel = "modProfile.p" + nr + "label"
 	
 	if(!modProfile){
 		let clean = modsFromUserCfg_const.replaceAll(/[^\w\d_]+/g,' ');
 
-		clean = modsFromUserCfg_const.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it
+		clean = clean.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it
 		Engine.ConfigDB_WriteValueToFile("user", name, clean, "config/user.cfg"); // fill it if its empty
 
 		const cleanLabel = clean.replaceAll(/([^ ]{3})[^ ]+/g,'$1');
 		// const cleanLabel = "ba5";
 		// Engine.ConfigDB_CreateValue("user", nameLabel, cleanLabel);
 		Engine.ConfigDB_WriteValueToFile("user", nameLabel, cleanLabel, "config/user.cfg"); // fill it if its empty
+		Engine.ConfigDB_CreateValue("user", nameLabel, cleanLabel);
 	}else{
 		let clean = modProfile.replaceAll(/[^\w\d_]+/g,' ');
-		clean = modProfile.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it
+		clean = clean.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it
 		if(clean != modProfile){
 			Engine.ConfigDB_WriteValueToFile("user", name, clean, "config/user.cfg"); // 
 
@@ -147,6 +148,7 @@ function saveThisModProfile(nr){
 			// const cleanLabel = "bo5";
 			// Engine.ConfigDB_CreateValue("user", nameLabel, cleanLabel);
 			Engine.ConfigDB_WriteValueToFile("user", nameLabel, cleanLabel, "config/user.cfg"); // fill it if its empty
+			Engine.ConfigDB_CreateValue("user", nameLabel, cleanLabel);
 
 			warn("modProfile.p" + nr + ' saved with =' + clean + '=');
 		}
