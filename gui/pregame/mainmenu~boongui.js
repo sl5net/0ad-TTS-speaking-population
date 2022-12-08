@@ -132,7 +132,8 @@ function saveThisModProfile(nr, autoLabelManually){
 	if(!modProfile){
 		// warn("133")
 		let clean = modsFromUserCfg_const.replaceAll(/[^\w\d\-]+/g,' ');
-		clean = clean.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it
+		clean = clean.replaceAll(/\b((mod\s+public)|ttsSpeakingPopulation)\b\s*/g,''); // mod\s+public is default. boring to save it
+
 
 		Engine.ConfigDB_WriteValueToFile("user", name, clean, "config/user.cfg"); // fill it if its empty
 
@@ -141,7 +142,7 @@ function saveThisModProfile(nr, autoLabelManually){
 		Engine.ConfigDB_CreateValue("user", nameLabel, cleanLabel);
 	}else{
 		let clean = modProfile.replaceAll(/[^\w\d\-]+/g,' ');
-		clean = clean.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it
+		clean = clean.replaceAll(/\b((mod\s+public)|ttsSpeakingPopulation)\b\s*/g,''); // mod\s+public is default. boring to save it
 
 		// warn("146:" + modProfile)
 		// warn("147:" + clean)
@@ -169,8 +170,8 @@ function enableThisModProfile(nr){
 		const modsFromUserCfg_const = Engine.ConfigDB_GetValue("user", "mod.enabledmods");
 		const profKey = "modProfile.p" + nr;
 		const modProfile = Engine.ConfigDB_GetValue("user", profKey);
-		let clean = "mod public " + modProfile.replaceAll(/\b(mod\s+public)\b\s*/g,' '); // mod\s+public is default. boring to save it
-		clean = "mod public " + modProfile.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it in normal profiles. but dont forget it by enaable mods
+		let clean = "mod public " + modProfile.replaceAll(/\b((mod\s+public)|ttsSpeakingPopulation)\b\s*/g,' '); // mod\s+public is default. boring to save it
+		clean = "mod public " + modProfile.replaceAll(/\b(mod\s+public)\b\s*/g,'') + " ttsSpeakingPopulation" ; // mod\s+public is default. boring to save it in normal profiles. but dont forget it by enaable mods
 		if(clean != modsFromUserCfg_const){
 			warn("save:" + nr);
 			warn(clean);
