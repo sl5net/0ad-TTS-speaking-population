@@ -23,6 +23,8 @@ Recomanded Config:
 
 should work platform independent (tested in ubuntu)
 
+![Screenshot_20221208_082103](https://user-images.githubusercontent.com/5634759/206384044-feef5147-8302-4820-838a-ef1b3b3fb2f4.jpg)
+
 
 
 ## "mod Profile Selector" (extra Goody)
