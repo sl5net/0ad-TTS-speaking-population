@@ -23,14 +23,13 @@ Recomanded Config:
 
 should work platform independent (tested in ubuntu)
 
-![Screenshot_20221208_081720](https://user-images.githubusercontent.com/5634759/206383422-420d0d84-14ec-4e3c-90c4-1cf1c0b53973.jpg)
 
 
 ## "mod Profile Selector" (extra Goody)
 
 should work platform independent (tested in ubuntu)
 
-![Screenshot_20221123_154328](https://user-images.githubusercontent.com/5634759/203575363-1e24b7b4-af80-4b21-b109-d41c1a5f4fa9.jpg)
+![Screenshot_20221208_081720](https://user-images.githubusercontent.com/5634759/206383669-4c2f81ec-b90b-412d-875d-c454741bcf1b.jpg)
 
 
 # install if you want use TTS for Linux with autoKey (Python)
