@@ -121,37 +121,47 @@ function check_tts_Settings(){
 
 check_tts_Settings();
 
-function saveThisModProfile(nr){
+function saveThisModProfile(nr, autoLabelManually){
 	const modsFromUserCfg_const = Engine.ConfigDB_GetValue("user", "mod.enabledmods");
 	const name = "modProfile.p" + nr
 	const modProfile = Engine.ConfigDB_GetValue("user", name);
 	const nameLabel = "modProfile.p" + nr + "label"
 	
-	if(!modProfile){
-		let clean = modsFromUserCfg_const.replaceAll(/[^\w\d_]+/g,' ');
+	// warn("check if ModProfiles has changed")
 
+	if(!modProfile){
+		// warn("133")
+		let clean = modsFromUserCfg_const.replaceAll(/[^\w\d\-]+/g,' ');
 		clean = clean.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it
+
 		Engine.ConfigDB_WriteValueToFile("user", name, clean, "config/user.cfg"); // fill it if its empty
 
 		const cleanLabel = clean.replaceAll(/([^ ]{3})[^ ]+/g,'$1');
-		// const cleanLabel = "ba5";
-		// Engine.ConfigDB_CreateValue("user", nameLabel, cleanLabel);
 		Engine.ConfigDB_WriteValueToFile("user", nameLabel, cleanLabel, "config/user.cfg"); // fill it if its empty
 		Engine.ConfigDB_CreateValue("user", nameLabel, cleanLabel);
 	}else{
-		let clean = modProfile.replaceAll(/[^\w\d_]+/g,' ');
+		let clean = modProfile.replaceAll(/[^\w\d\-]+/g,' ');
 		clean = clean.replaceAll(/\b(mod\s+public)\b\s*/g,''); // mod\s+public is default. boring to save it
-		if(clean != modProfile){
+
+		// warn("146:" + modProfile)
+		// warn("147:" + clean)
+		if(clean != modProfile){ // correct profile if necesarry
 			Engine.ConfigDB_WriteValueToFile("user", name, clean, "config/user.cfg"); // 
-
-			const cleanLabel = clean.replaceAll(/([^ ]{3})[^ ]+/g,'$1');
-			// const cleanLabel = "bo5";
-			// Engine.ConfigDB_CreateValue("user", nameLabel, cleanLabel);
-			Engine.ConfigDB_WriteValueToFile("user", nameLabel, cleanLabel, "config/user.cfg"); // fill it if its empty
-			Engine.ConfigDB_CreateValue("user", nameLabel, cleanLabel);
-
+			Engine.ConfigDB_CreateValue("user", name, clean); // to see it early in the memory
 			warn("modProfile.p" + nr + ' saved with =' + clean + '=');
+
+			
 		}
+
+
+		if(!autoLabelManually){
+				const cleanLabel = clean.replaceAll(/([^ ]{3})[^ ]+/g,'$1');
+				Engine.ConfigDB_WriteValueToFile("user", nameLabel, cleanLabel, "config/user.cfg"); // fill it if its empty
+				Engine.ConfigDB_CreateValue("user", nameLabel, cleanLabel);
+
+				warn("autoLabel" + nr + ' saved with =' + cleanLabel + '=');
+		}
+
 	}
 }
 function enableThisModProfile(nr){ 
@@ -184,14 +194,16 @@ function enableThisModProfile(nr){
 	}
 	return false;
 }
+
 function check_modProfileSelector_settings(){ 
 	// Check settings
-	[...Array(6)].forEach(( _, k0_5 ) => saveThisModProfile(k0_5));  
+	const autoLabelManually = (Engine.ConfigDB_GetValue("user", "modProfile.autoLabelManually") == "true");
+	[...Array(6)].forEach(( _, k0_5 ) => saveThisModProfile(k0_5, autoLabelManually));  
 	// return false; 
  	let k0_5 = -1;
 	while(++k0_5 <= 5){
 		let nameOfCheckBox = "modProfile.p" + k0_5 + "enabled";
-		if(Engine.ConfigDB_GetValue("user", nameOfCheckBox)== "true"){
+		if(Engine.ConfigDB_GetValue("user", nameOfCheckBox) == "true"){
 			if(enableThisModProfile(k0_5)){
 				warn("" + k0_5 + " was enabled as your default mod-configuration."); 
 				Engine.ConfigDB_WriteValueToFile("user", nameOfCheckBox, "false", "config/user.cfg"); 
