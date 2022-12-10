@@ -44,7 +44,7 @@
     "hotkey.autociv.selection.nowoundedonly": "K",
     "hotkey.autociv.session.building.autotrain.disable": "Super+W",
     "hotkey.autociv.session.building.autotrain.enable": "\"V\", \"Y\", \"X\", \"Z\", \"C\", \"B\", \"N\", \"Semicolon\"",
-    "stupidTest": "\"huhi\"",
+    "hotkey.session.queueunit.autoqueueon": "\"Z\", \"X\", \"C\", \"B\", \"Y\", \"N\", \"N\"",
     "hotkey.autociv.session.building.place.amphitheater_pompeii": "",
     "hotkey.autociv.session.building.place.apadana": "",
     "hotkey.autociv.session.building.place.arch": "",
