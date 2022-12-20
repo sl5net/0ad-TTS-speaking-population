@@ -1,7 +1,6 @@
 # 0ad-TTS-speaking-population
 speaking population. experimental solution for mod-developers working linux. tested in ubuntu
 
-
 https://wildfiregames.com/forum/topic/97986-tts-inside-the-game
 
 it uses a huge amount of source code from everywhere. 
@@ -15,7 +14,22 @@ especially from:
 
 <a href="https://www.youtube.com/watch?v=b_-AXmcDIRs" target="_blank"><img src="http://img.youtube.com/vi/b_-AXmcDIRs/0.jpg" alt="Thumbnail" width="320" height="200" />
 
-Recomanded Config:
+# Installation
+
+1. Download
+1. Open the extracted folder and locate the sub-folder named 0ad-TTS....
+1. Copy it into mods folder, tipically located at:
+
+- Linux: `~/.local/share/0ad/mods/`
+- macOS: `~/Library/Application\ Support/0ad/mods/`
+- Windows: `~\Documents\My Games\0ad\mods\`
+
+Launch `0 A.D.` and open the `Settings` > `Mod Selection` menu.
+Select the `ttsSpeakingPopulation` mod, Enable it and Save Configuration, restart the game.
+
+
+
+## Recomanded Config:
 
 ![Screenshot_20221120_083249](https://user-images.githubusercontent.com/5634759/202891078-87dd47d1-9448-423e-85f3-2e30cb78146e.jpg)
 
