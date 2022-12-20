@@ -17,8 +17,8 @@ especially from:
 # Installation
 
 1. Download
-1. Open the extracted folder and locate the sub-folder named 0ad-TTS....
-1. Copy it into mods folder, tipically located at:
+1. extracted folder
+1. Copy extracted folder into mods folder, typically located at:
 
 - Linux: `~/.local/share/0ad/mods/`
 - macOS: `~/Library/Application\ Support/0ad/mods/`
