@@ -1,7 +1,6 @@
 # 0ad-TTS-speaking-population
 speaking population. experimental solution for mod-developers working linux. tested in ubuntu
 
-
 https://wildfiregames.com/forum/topic/97986-tts-inside-the-game
 
 it uses a huge amount of source code from everywhere. 
@@ -15,7 +14,22 @@ especially from:
 
 <a href="https://www.youtube.com/watch?v=b_-AXmcDIRs" target="_blank"><img src="http://img.youtube.com/vi/b_-AXmcDIRs/0.jpg" alt="Thumbnail" width="320" height="200" />
 
-Recomanded Config:
+# Installation
+
+1. Download
+1. extracted folder
+1. Copy extracted folder into mods folder, typically located at:
+
+- Linux: `~/.local/share/0ad/mods/`
+- macOS: `~/Library/Application\ Support/0ad/mods/`
+- Windows: `~\Documents\My Games\0ad\mods\`
+
+Launch `0 A.D.` and open the `Settings` > `Mod Selection` menu.
+Select the `ttsSpeakingPopulation` mod, Enable it and Save Configuration, restart the game.
+
+
+
+## Recomanded Config:
 
 ![Screenshot_20221120_083249](https://user-images.githubusercontent.com/5634759/202891078-87dd47d1-9448-423e-85f3-2e30cb78146e.jpg)
 
@@ -25,6 +39,13 @@ should work platform independent (tested in ubuntu)
 
 ![Screenshot_20221208_082103](https://user-images.githubusercontent.com/5634759/206384044-feef5147-8302-4820-838a-ef1b3b3fb2f4.jpg)
 
+there at the moment 2 profiles included.
+
+the 3 top features of the intuitive-Projile are:
+
+- ALT+FirstLetter of the Creature / selects Creature or Creatures
+- Ctrl+FirstLetter of the Building / selects Building or the Buildings
+- FirstLetter of the Building (press several times for toggling) / build the Building
 
 
 ## "mod Profile Selector" (extra Goody)
