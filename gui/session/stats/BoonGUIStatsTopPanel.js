@@ -57,12 +57,13 @@ class BoonGUIStatsTopPanel {
 		
 
 		// tells only if i playing in the game. false if i observer. always in row 1
-		this.itsMe = (playersStates[0].name == this.playername_multiplayer 
-			|| playersStates[0].name == this.playername_singleplayer);
+		this.itsMe = (
+				playersStates[0].name == this.playername_multiplayer 
+			|| 	playersStates[0].name == this.playername_singleplayer);
 
 		this.itsTTSPlayerAlias = (
-			  playersStates[0].name == AudioTTS.onlyForThisPlayerAlias
-		   || playersStates[0].name == AudioTTS.onlyForThisPlayerAlias
+			  	playersStates[0].name == AudioTTS.playername_multiplayer
+		   || 	playersStates[0].name == AudioTTS.onlyForThisPlayerAlias
 		);
 		// warn('this.itsMe = ' + this.itsMe);
 		// warn('itsMeGlobal = ' + itsMeGlobal); // always false
