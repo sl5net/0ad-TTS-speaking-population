@@ -131,7 +131,27 @@ function saveThisModProfile(nr, autoLabelManually){
 
 	if(!modProfile){
 		// warn("133")
-		let clean = modsFromUserCfg_const.replaceAll(/[^\w\d\-]+/g,' ');
+		let clean = "";
+		switch(nr){
+			case 0: // p0
+				clean = modsFromUserCfg_const.replaceAll(/[^\w\d\-]+/g,' ');
+				break;
+			case 1:
+				clean = "autociv LocalRatings-master better_summary_charts";
+				break;
+			case 2:
+				clean = "community-mod feldmap autociv better_summary_charts";
+				break;
+			case 3:
+				clean = "LocalRatings-master better_summary_charts";
+				break;
+			case 4:
+				clean = "community-maps-2 kush-extreme 10ad autociv";
+				break;
+			case 4:
+				clean = "mainland-twilight autociv LocalRatings-master ";
+				break;
+		}
 		clean = clean.replaceAll(/\b((mod\s+public)|ttsSpeakingPopulation)\b\s*/g,''); // mod\s+public is default. boring to save it
 
 
