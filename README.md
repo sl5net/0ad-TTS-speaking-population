@@ -10,7 +10,9 @@ especially from:
 - boonGui ( https://github.com/LangLangBart/boonGUI )
 - espeak ( https://github.com/eeejay/espeak )
 - autoKey ( https://github.com/autokey/autokey )
-- 0ad_TTS_userCfg ( https://gitlab.com/-/ide/project/sl5net/0ad_tts_for_mods/tree/main/-/0ad_TTS_userCfg/ )
+- 0ad_TTS_userCfg ( 
+-- https://gitlab.com/-/ide/project/sl5net/0ad_tts_for_mods/tree/main/-/0ad_TTS_userCfg/
+-- or Version from Dec 2022 from here https://gist.github.com/sl5net/8b509c23f5bc2df70e5ad03864dff6f0 )
 
 <a href="https://www.youtube.com/watch?v=b_-AXmcDIRs" target="_blank"><img src="http://img.youtube.com/vi/b_-AXmcDIRs/0.jpg" alt="Thumbnail" width="320" height="200" />
 
