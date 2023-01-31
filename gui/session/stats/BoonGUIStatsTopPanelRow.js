@@ -41,7 +41,7 @@ class BoonGUIStatsTopPanelRow
 		if(msg)
 			this.personalizeArryList[0] = msg; 
 
-		// ty for https://wildfiregames.com/forum/topic/64941-0ad-guide-from-nub-to-op/?do=findComment&comment=470369
+		// ty Kate for https://wildfiregames.com/forum/topic/64941-0ad-guide-from-nub-to-op/?do=findComment&comment=470369
 		this.tipsFromKatePDF = [
 			""
 			, "Send the 4 women to gather berries."
@@ -56,6 +56,7 @@ class BoonGUIStatsTopPanelRow
 			, "Elephant civs can use elephants instead."
 			, "Also get hero trained."
 			, "If attack maysbe use formations to keep them together. Close and Box are the most common ones."
+			, "Idle time. Don’t let your units stand still. Always make them build or gather or production buildings"
 		]
 
 		this.personalizeArryList = this.personalizeArryList.concat( this.tipsFromKatePDF);
