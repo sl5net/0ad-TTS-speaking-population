@@ -1,10 +1,12 @@
 # 0ad-TTS-speaking-population
-speaking population. experimental solution for mod-developers working linux. tested in ubuntu
+speaking population. An experimental solution for mod developers who work in Linux.
 
-https://wildfiregames.com/forum/topic/97986-tts-inside-the-game
+[WFG tts Forum post](https://wildfiregames.com/forum/topic/97986-tts-inside-the-game)
 
-it uses a huge amount of source code from everywhere. 
-thank you very much!!!
+This mod has been primarily tested on Ubuntu.
+
+It uses a huge amount of source code from everywhere.
+Thank you very much!!!
 
 especially from:
 - boonGui ( https://github.com/LangLangBart/boonGUI )
@@ -18,7 +20,7 @@ especially from:
 # Installation
 
 1. Download
-1. extracted folder
+1. extract folder
 1. Copy extracted folder into mods folder, typically located at:
 
 - Linux: `~/.local/share/0ad/mods/`
@@ -60,12 +62,12 @@ should work platform independent (tested in ubuntu)
 
 ## examples - maybe you need to do it a little bit different
 ```sh
-sudo apt-get install espeak 
+sudo apt-get install espeak
 
-sudo dpkg -i  ./autokey-common_0.96.0_all.deb 
+sudo dpkg -i  ./autokey-common_0.96.0_all.deb
 sudo dpkg -i  ./autokey-qt_0.96.0_all.deb
 ```
 copy and start
 
-https://gitlab.com/-/ide/project/sl5net/0ad_tts_for_mods/tree/main/-/0ad_TTS_userCfg/ 
+https://gitlab.com/-/ide/project/sl5net/0ad_tts_for_mods/tree/main/-/0ad_TTS_userCfg/
 
